@@ -57,7 +57,7 @@ in {
           layout = "dwindle";
         };
 
-        monitor = ",preferred,auto,1";
+        monitor = ",preferred,auto,1.25";
 
         env = [
           "XCURSOR_SIZE,24"
