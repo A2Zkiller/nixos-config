@@ -1,8 +1,9 @@
 {pkgs}: let
-  image = pkgs.fetchurl {
-    url = "https://raw.githubusercontent.com/Goxore/dotfiles/50db864d56d49768f1d4d0a8c1bd7a5c74dd629e/home/Wallpapers/gruvbox-mountain-village.png";
-    sha256 = "sha256-HrcYriKliK2QN02/2vFK/osFjTT1NamhGKik3tozGU0=";
-  };
+  image = lockscreen-wallpaper.png
+  # pkgs.fetchurl {
+  #   url = "https://raw.githubusercontent.com/Goxore/dotfiles/50db864d56d49768f1d4d0a8c1bd7a5c74dd629e/home/Wallpapers/gruvbox-mountain-village.png";
+  #   sha256 = "sha256-HrcYriKliK2QN02/2vFK/osFjTT1NamhGKik3tozGU0=";
+  # };
 in
   pkgs.stdenv.mkDerivation {
     name = "sddm-theme";
