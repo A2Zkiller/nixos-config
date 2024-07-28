@@ -7,13 +7,14 @@
 }: {
   nixpkgs.config.experimental-features = "nix-command flakes";
 
-  myHomeManager.zsh.enable = lib.mkDefault true;
-  myHomeManager.lf.enable = lib.mkDefault true;
-  myHomeManager.nix-extra.enable = lib.mkDefault true;
-  myHomeManager.btop.enable = lib.mkDefault true;
-  myHomeManager.git.enable = lib.mkDefault true;
-
-  myHomeManager.stylix.enable = lib.mkDefault true;
+  myHomeManager = {
+    zsh.enable = lib.mkDefault true;
+    lf.enable = lib.mkDefault true;
+    nix-extra.enable = lib.mkDefault true;
+    btop.enable = lib.mkDefault true;
+    git.enable = lib.mkDefault true;
+    stylix.enable = lib.mkDefault true;
+  };
 
   programs.home-manager.enable = true;
 
@@ -53,6 +54,6 @@
   ];
 
   home.sessionVariables = {
-    FLAKE = "${config.home.homeDirectory}";
+    FLAKE = ./../..;
   };
 }

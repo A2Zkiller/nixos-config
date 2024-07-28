@@ -1,6 +1,7 @@
 {
   pkgs,
   inputs,
+  lib,
   ...
 }: {
   imports = [
@@ -61,6 +62,6 @@
     targets.plymouth.enable = true;
     # targets.nixos-icons.enable = true;
 
-    autoEnable = false;
+    autoEnable = lib.mkDefault true;
   };
 }
