@@ -3,7 +3,7 @@
   lib,
   ...
 }: {
-  # stylix.image = ./prism/wallpapers/gruvbox-mountain-village.png;
+  # stylix.image = ;
 
   stylix.targets.waybar.enable = false;
   stylix.targets.rofi.enable = false;

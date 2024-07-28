@@ -62,6 +62,6 @@
     targets.plymouth.enable = true;
     # targets.nixos-icons.enable = true;
 
-    autoEnable = lib.mkDefault true;
+    autoEnable = true;
   };
 }
