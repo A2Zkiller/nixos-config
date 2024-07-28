@@ -9,6 +9,7 @@
       rofi.enable = lib.mkDefault true;
       alacritty.enable = lib.mkDefault true;
       kitty.enable = lib.mkDefault true;
+      foot.enable = lib.mkDefault true;
 
       gtk.enable = lib.mkDefault true;
     };
