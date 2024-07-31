@@ -53,9 +53,12 @@
         popups = 10;
       };
     };
-
-    cursor.name = "Bibata-Modern-Ice";
-    cursor.package = pkgs.bibata-cursors;
+    
+    cursor = {
+      name = "Bibata-Modern-Ice";
+      package = pkgs.bibata-cursors;
+      size = 24;
+    };
 
     targets.chromium.enable = true;
     targets.grub.enable = true;
