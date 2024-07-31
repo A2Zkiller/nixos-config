@@ -53,7 +53,7 @@
       };
     };
 
-    cursor.name = "Bibata-Modern-Classic";
+    cursor.name = "Bibata-Modern-Ice";
     cursor.package = pkgs.bibata-cursors;
 
     targets.chromium.enable = true;

@@ -31,10 +31,9 @@
 
   exec-once =
     [
-      "${pkgs.swww}/bin/swww-daemon --format xrgb & \
-      ${pkgs.swww}/bin/swww img ${config.stylix.image}"
+      "${pkgs.swww}/bin/swww-daemon --format xrgb & ${pkgs.swww}/bin/swww img ${config.stylix.image}"
 
-      "hyprctl setcursor Bibata-Modern-Classic 16"
+      "hyprctl setcursor Bibata-Modern-Ice 24"
       
       "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
     ];
