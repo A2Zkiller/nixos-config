@@ -3,13 +3,15 @@
   lib,
   ...
 }: {
-  # stylix.image = ;
+  stylix = {
+    # image = 
 
-  stylix.targets.waybar.enable = false;
-  stylix.targets.rofi.enable = false;
-
-  cursor.name = "Bibata-Modern-Ice";
-  cursor.package = pkgs.bibata-cursors;
-
-  stylix.autoEnable = true;
+    targets.waybar.enable = false;
+    targets.rofi.enable = false;
+    
+    cursor.name = "Bibata-Modern-Ice";
+    cursor.package = pkgs.bibata-cursors;
+    
+    autoEnable = true;
+  };
 }
