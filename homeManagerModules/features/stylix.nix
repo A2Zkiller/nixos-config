@@ -4,6 +4,8 @@
   ...
 }: {
   stylix = {
+    enable = true;
+
     # image = 
 
     targets.waybar.enable = false;

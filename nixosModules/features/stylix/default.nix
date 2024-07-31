@@ -8,6 +8,7 @@
     inputs.stylix.nixosModules.stylix
   ];
   stylix = {
+    enable = true;
   #   base16Scheme = {
   #     base00 = "282828"; # ----
   #     base01 = "3c3836"; # ---
@@ -62,6 +63,6 @@
     targets.plymouth.enable = true;
     # targets.nixos-icons.enable = true;
 
-    autoEnable = true;
+    autoEnable = false;
   };
 }
