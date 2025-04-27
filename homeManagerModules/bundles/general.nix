@@ -14,6 +14,7 @@
     btop.enable = lib.mkDefault true;
     git.enable = lib.mkDefault true;
     stylix.enable = lib.mkDefault true;
+    nvf.enable = lib.mkDefault true;
   };
 
   programs.home-manager.enable = true;

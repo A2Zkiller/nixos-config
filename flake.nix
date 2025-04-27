@@ -17,6 +17,8 @@
     };
 
     determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/*";
+
+    nvf.url = "github:notashelf/nvf";
   };
 
   outputs = { ... }@inputs: 
