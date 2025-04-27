@@ -9,7 +9,7 @@
   };
 
   # Set your time zone.
-  time.timeZone = "Asia/Amman";
+  time.timeZone = lib.mkDefault "Asia/Amman";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";

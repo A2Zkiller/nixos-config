@@ -7,9 +7,16 @@
   system,
   myLib,
   ... 
-}: {
+}: 
+  let hardwareConfig = 
+    if builtins.pathExists ./hardware-configuration.nix then
+      ./hardware-configuration.nix
+    else 
+      /etc/nixos/hardware-configuration.nix;
+  in
+{
   imports = [
-    ./hardware-configuration.nix
+    hardwareConfig
   ];
 
   # Bootloader.
@@ -44,7 +51,7 @@
   networking.networkmanager.enable = true;
   networking.firewall.enable = false;
 
-  time.timeZone = "Asia/Amman";
+  time.timeZone = "America/New_York";
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "en_US.UTF-8";

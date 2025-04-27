@@ -18,4 +18,8 @@
       shell_integration = "enabled";
     };
   };
+
+  home.packages = with pkgs; [
+    gtk3
+  ];
 }

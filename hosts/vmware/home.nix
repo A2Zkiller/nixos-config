@@ -18,7 +18,9 @@
   home.homeDirectory = "/home/a2z";
 
   home.packages = with pkgs; [
-    firefox
+    # firefox
+    floorp
+
     foot
   ];
 

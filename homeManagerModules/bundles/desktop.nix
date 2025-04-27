@@ -71,7 +71,6 @@
 
       virt-manager
 
-      wezterm
       kitty
 
       onlyoffice-bin
