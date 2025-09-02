@@ -5,7 +5,7 @@
 }: {
   # xdg.configFile."rofi/config.rasi".source = ./config.rasi;
 
-  xdg.configFile."rofi/config.rasi".text = with config.stylix.base16Scheme; ''
+  xdg.configFile."rofi/config.rasi".text = with config.lib.stylix.colors; ''
     /*****----- Configuration -----*****/
     configuration {
         show-icons:                 true;
