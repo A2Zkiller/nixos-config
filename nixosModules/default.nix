@@ -48,10 +48,11 @@ in {
   imports =
     [
       inputs.home-manager.nixosModules.home-manager
+      inputs.determinate.nixosModules.default
     ]
     ++ features
-    ++ bundles;
-    # ++ services;
+    ++ bundles
+    ++ services;
 
   options.myNixOS = {
     hyprland.enable = lib.mkEnableOption "enable hyprland";
