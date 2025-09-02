@@ -1,11 +1,12 @@
 {pkgs, lib, ...}: let
   sddmTheme = import ./sddm-theme.nix {inherit pkgs;};
 in {
-  services.displayManager = {
-    sddm.enable = lib.mkDefault true;
-    sddm.wayland.enable = true;
+  services.displayManager.sddm = {
+    enable = lib.mkDefault true;
+    wayland.enable = true;
     # sddm.theme = "${sddmTheme}";
-    sddm.theme = "catppuccin-mocha";
+    theme = "catppuccin-mocha";
+    package = pkgs.kdePackages.sddm;
   };
 
   environment.systemPackages = with pkgs; [

@@ -1,5 +1,6 @@
 {
   inputs,
+  pkgs,
   ...
 }: {
   imports = [
@@ -12,6 +13,8 @@
     settings = {
       vim = {
         vimAlias = true;
+
+        package = pkgs.neovim-unwrapped;
 
         theme = {
           enable = true;

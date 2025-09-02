@@ -29,7 +29,6 @@
     unzip
     zip
     stow
-    neovim
     killall
     imagemagick
     libqalculate
@@ -49,7 +48,6 @@
     wget
 
     yt-dlp
-    tree-sitter
 
     nh
   ];
