@@ -24,7 +24,6 @@ in {
       q = "exit";
       ":q" = "exit";
       cd = "z";
-      rebuild = "sudo nixos-rebuild switch";
     };
     oh-my-zsh = {
       enable = true;

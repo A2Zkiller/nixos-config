@@ -5,7 +5,7 @@
   ...
 }: {
   imports = [
-    inputs.stylix.nixosModules.stylix
+    inputs.stylix.homeManagerModules.stylix
   ];
   
   config.lib.stylix.colors = {

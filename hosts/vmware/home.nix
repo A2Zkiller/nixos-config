@@ -22,9 +22,16 @@
   home.packages = with pkgs; [
     # firefox
     floorp
+    
+    vesktop
+    xwayland-satellite
 
     foot
   ];
+
+  home.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
+  };
 
   home.stateVersion = "23.11"; 
 }

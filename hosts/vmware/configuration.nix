@@ -80,7 +80,7 @@
   };
 
   hardware.graphics.enable = true;
-  hardware.openrazer.enable = true;
+  # hardware.openrazer.enable = true;
 
   programs.dconf.enable = true;
 

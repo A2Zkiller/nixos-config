@@ -1,6 +1,4 @@
 {
-  pkgs,
-  lib,
   inputs,
   ...
 }: {
@@ -34,7 +32,9 @@
 	  nix.enable = true;
           rust.enable = true;
 	};
-
+        
+        options.shiftwidth = 4;
+        utility.sleuth.enable = true;
       };
     };
   };

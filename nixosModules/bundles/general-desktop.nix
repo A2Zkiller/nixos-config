@@ -5,7 +5,7 @@
 }: {
   myNixOS = {
     sddm.enable = lib.mkDefault true;
-    stylix.enable = lib.mkDefault true;
+    # stylix.enable = lib.mkDefault true;
   };
 
   # Set your time zone.
