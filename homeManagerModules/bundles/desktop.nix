@@ -18,8 +18,6 @@
     };
 
     qt.enable = true;
-    qt.platformTheme.name = "gtk";
-    qt.style.name = "adwaita-dark";
 
     home.sessionVariables = {
       QT_STYLE_OVERRIDE = "adwaita-dark";

@@ -7,19 +7,9 @@ in rec {
   # =                            My Lib                            = #
   # ================================================================ #
 
-  # =========================== Helpers ============================ #
+  # ======================= Package Helpers ======================== #
 
-  myOverlays = import ./../overlays {inherit inputs outputs;};
-
-  pkgsFor = system:
-    import nixpkgs {
-      inherit system;
-      overlays = myOverlays;
-    };
-
-  overlayModule = {
-    nixpkgs.overlays = myOverlays;
-  };
+  pkgsFor = system: import nixpkgs {inherit system;};
 
   # ========================== Buildables ========================== #
 
@@ -31,7 +21,6 @@ in rec {
       modules = [
         config
         outputs.nixosModules.default
-        overlayModule
 
         ({pkgs, ...}: {nix.package = pkgs.lix;})
       ];
@@ -41,16 +30,9 @@ in rec {
     inputs.home-manager.lib.homeManagerConfiguration {
       pkgs = pkgsFor sys;
       extraSpecialArgs = {
-        inherit inputs myLib outputs;
+        inherit inputs outputs myLib;
       };
       modules = [
-        # TODO: move this
-        inputs.stylix.homeManagerModules.stylix
-        {
-          stylix.image = ./../nixosModules/features/stylix/gruvbox-mountain-village.png;
-          nixpkgs.config.allowUnfree = true;
-        }
-
         config
         outputs.homeManagerModules.default
       ];
@@ -62,7 +44,7 @@ in rec {
     (builtins.attrNames (builtins.readDir dir)));
 
   dirsIn = dir:
-    nixpkgs.lib.filterAttrs (name: value: value == "directory")
+    inputs.nixpkgs.lib.filterAttrs (name: value: value == "directory")
     (builtins.readDir dir);
 
   fileNameOf = path: (builtins.head (builtins.split "\\." (baseNameOf path)));
@@ -70,7 +52,6 @@ in rec {
   # ========================== Extenders =========================== #
 
   # Evaluates nixos/home-manager module and extends it's options / config
-  # I don't use it anymore, but left just in case
   extendModule = {path, ...} @ args: {pkgs, ...} @ margs: let
     eval =
       if (builtins.isString path) || (builtins.isPath path)
@@ -106,7 +87,6 @@ in rec {
   # Applies extendModules to all modules
   # modules can be defined in the same way
   # as regular imports, or taken from "filesIn"
-  # I don't use it anymore, but left just in case
   extendModules = extension: modules:
     map
     (f: let

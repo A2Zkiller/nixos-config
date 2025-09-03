@@ -39,7 +39,7 @@ in {
     home-manager = {
       useGlobalPkgs = true;
       useUserPackages = true;
-      backupFileExtension = ".backup";
+      backupFileExtension = "backup";
 
       extraSpecialArgs = {
         inherit inputs;
@@ -63,7 +63,6 @@ in {
           isNormalUser = true;
           initialPassword = "12345";
           description = "";
-          # TODO: migrate to fish later
           shell = pkgs.zsh;
           extraGroups = ["libvirtd" "networkmanager" "wheel"];
         }

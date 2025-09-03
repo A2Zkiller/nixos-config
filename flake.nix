@@ -9,7 +9,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/*";
+    # determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/*";
 
     stylix.url = "github:danth/stylix";
 
@@ -22,21 +22,19 @@
       url = "github:notashelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
     };
- };
+  };
 
-  outputs = { ... }@inputs: 
-  let
-    myLib = import ./myLib/default.nix { inherit inputs; };
-  in with myLib; {
-    nixosConfigurations = {
-      vmware = mkSystem ./hosts/vmware/configuration.nix;
-    };
+  outputs = inputs: 
+    with (import ./myLib inputs); {
+      nixosConfigurations = {
+        vmware = mkSystem ./hosts/vmware/configuration.nix;
+      };
 
-    homeConfigurations = {
-      "a2z@vmware" = mkHome "x86_64-linux" ./hosts/vmware/home.nix;
-    };
+      homeConfigurations = {
+        "a2z@vmware" = mkHome "x86_64-linux" ./hosts/vmware/home.nix;
+      };
 
-    homeManagerModules.default = ./homeManagerModules;
-    nixosModules.default = ./nixosModules;
+      homeManagerModules.default = ./homeManagerModules;
+      nixosModules.default = ./nixosModules;
   };
 }
