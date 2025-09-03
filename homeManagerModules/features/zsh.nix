@@ -34,17 +34,17 @@ in {
       theme = "";
     };
 
-    plugins = [
-      {
-        name = "pure";
-        src = pkgs.fetchFromGitHub {
-          owner = "sindresorhus";
-          repo = "pure";
-          rev = "v1.23.0";
-          sha256 = "sha256-BmQO4xqd/3QnpLUitD2obVxL0UulpboT8jGNEh4ri8k=";
-        };
-      }
-    ];
+      # plugins = [
+      #   {
+      #     name = "pure";
+      #     src = pkgs.fetchFromGitHub {
+      #       owner = "sindresorhus";
+      #       repo = "pure";
+      #       rev = "v1.23.0";
+      #       sha256 = "sha256-BmQO4xqd/3QnpLUitD2obVxL0UulpboT8jGNEh4ri8k=";
+      #     };
+      #   }
+      # ];
   };
 
   programs.zoxide =  {

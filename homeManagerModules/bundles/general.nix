@@ -7,6 +7,7 @@
 }: {
   myHomeManager = {
     zsh.enable = lib.mkDefault true;
+    starship.enable = lib.mkDefault true;
     lf.enable = lib.mkDefault true;
     nix-extra.enable = lib.mkDefault true;
     btop.enable = lib.mkDefault true;
