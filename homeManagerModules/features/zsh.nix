@@ -15,7 +15,6 @@ in {
 
   programs.zsh = {
     enable = true;
-    dotDir = ".config/zsh";
     shellAliases = {
       cat = "${pkgs.bat}/bin/bat";
       ls = "${pkgs.eza}/bin/eza --icons -a --group-directories-first";

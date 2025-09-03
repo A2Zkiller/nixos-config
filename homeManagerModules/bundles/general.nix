@@ -5,8 +5,6 @@
   inputs,
   ...
 }: {
-  nixpkgs.config.experimental-features = "nix-command flakes";
-
   myHomeManager = {
     zsh.enable = lib.mkDefault true;
     lf.enable = lib.mkDefault true;

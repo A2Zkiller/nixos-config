@@ -1,6 +1,7 @@
 {
   inputs,
   pkgs,
+  lib,
   ...
 }: {
   imports = [
@@ -18,7 +19,7 @@
 
         theme = {
           enable = true;
-	  name = "catppuccin";
+	  name = lib.mkDefault "catppuccin";
   	  style = "mocha";
         };
 
@@ -29,7 +30,6 @@
 	autocomplete.nvim-cmp.enable = true;
 
 	languages = {
-          enableLSP = true;
 	  enableTreesitter = true;
 
 	  nix.enable = true;

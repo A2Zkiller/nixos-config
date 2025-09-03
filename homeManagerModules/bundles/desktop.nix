@@ -19,10 +19,6 @@
 
     qt.enable = true;
 
-    home.sessionVariables = {
-      QT_STYLE_OVERRIDE = "adwaita-dark";
-    };
-
     services.udiskie.enable = true;
 
     xdg.mimeApps.defaultApplications = {
@@ -36,10 +32,13 @@
 
     services.mako = {
       enable = true;
-      borderRadius = 5;
-      borderSize = 2;
-      defaultTimeout = 10000;
-      layer = "overlay";
+      
+      settings = {
+        border-radius = 5;
+        border-size = 2;
+        defaultimeout = 10000;
+        layer = "overlay";
+      };
     };
 
     home.packages = with pkgs; [
