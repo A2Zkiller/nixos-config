@@ -29,6 +29,8 @@
     # general startupScript extension
   '';
 
+  colors = config.lib.stylix.colors;
+
   exec-once =
     [
       "${pkgs.swww}/bin/swww-daemon --format xrgb & ${pkgs.swww}/bin/swww img ${config.stylix.image}"
@@ -53,9 +55,8 @@ in {
           gaps_in = 5;
           gaps_out = 10;
           border_size = 2;
-          "col.active_border" = lib.mkForce ("rgba(${config.lib.stylix.colors.base0E}ff) " +
-              "rgba(${config.lib.stylix.colors.base09}ff) 60deg");
-          "col.inactive_border" = lib.mkForce "rgba(${config.lib.stylix.colors.base00}ff)";
+          "col.active_border" = lib.mkForce "rgba(${colors.base07}ff)";
+          "col.inactive_border" = lib.mkForce "rgba(${colors.base04}ff)";
 
           layout = "dwindle";
         };
@@ -96,16 +97,18 @@ in {
           movefocus_cycles_fullscreen = 0;
         };
 
-        # decoration = {
+        decoration = {
           # See https://wiki.hyprland.org/Configuring/Variables/ for more
 
-        # rounding = 5;
+          rounding = 5;
 
-        #  drop_shadow = true;
-        #  shadow_range = 30;
-        #  shadow_render_power = 3;
-          # "col.shadow" = "rgba(1a1a1aee)";
-      # };
+          shadow = {
+            enabled = true;
+            range = 30;
+            render_power = 3;
+            color = lib.mkForce "rgba(1a1a1aee)";
+          };
+        };
 
         animations = {
           enabled = true;

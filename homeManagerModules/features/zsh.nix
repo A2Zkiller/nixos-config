@@ -2,6 +2,7 @@
   pkgs,
   config,
   lib,
+  inputs,
   ...
 }: let
   cfg = config.myHomeManager;
@@ -30,8 +31,15 @@ in {
         "git"
 	"rust"
       ];
-      theme = "gnzh";
+      theme = "";
     };
+
+    plugins = [
+      {
+        name = "pure";
+        src = pkgs.pure-prompt;
+      }
+    ];
   };
 
   programs.zoxide =  {
