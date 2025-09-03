@@ -209,6 +209,8 @@ in {
       grim
       slurp
       wl-clipboard
+      
+      swayimg
 
       swww
 
