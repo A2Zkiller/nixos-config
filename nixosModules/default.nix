@@ -49,10 +49,9 @@ in {
     [
       inputs.home-manager.nixosModules.home-manager
     ]
-
     ++ features
-    ++ bundles;
-    # ++ services;
+    ++ bundles
+    ++ services;
 
   options.myNixOS = {
     hyprland.enable = lib.mkEnableOption "enable hyprland";
