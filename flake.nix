@@ -1,20 +1,16 @@
 {
-  description = "NixOS config flake";
+  description = "My config but built with Denix.";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/*";
-
-    stylix.url = "github:danth/stylix";
-
-    nix-index-database = {
-      url = "github:Mic92/nix-index-database";
+    stylix = {
+      url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -22,19 +18,43 @@
       url = "github:notashelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    denix = {
+      url = "github:yunfachi/denix";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
   };
 
-  outputs = inputs: 
-    with (import ./myLib inputs); {
-      nixosConfigurations = {
-        vmware = mkSystem ./hosts/vmware/configuration.nix;
-      };
+  outputs =
+    { denix, ... }@inputs:
+    let
+      mkConfigurations =
+        moduleSystem:
+        denix.lib.configurations {
+          inherit moduleSystem;
+          homeManagerUser = "a2z"; 
 
-      homeConfigurations = {
-        "a2z@vmware" = mkHome "x86_64-linux" ./hosts/vmware/home.nix;
-      };
+          paths = [
+            ./hosts
+            ./modules
+            ./rices
+          ];
 
-      homeManagerModules.default = ./homeManagerModules;
-      nixosModules.default = ./nixosModules;
-  };
+          extensions = with denix.lib.extensions; [
+            args
+            (base.withConfig {
+              args.enable = true;
+            })
+          ];
+
+          specialArgs = {
+            inherit inputs;
+          };
+        };
+    in
+    {
+      nixosConfigurations = mkConfigurations "nixos";
+      homeConfigurations = mkConfigurations "home";
+    };
 }
