@@ -6,29 +6,6 @@
   osConfig,
   ...
 }: let
-  generalStartScript = pkgs.writeShellScriptBin "start" ''
-    ${pkgs.swww}/bin/swww-daemon init &
-
-    ${pkgs.networkmanagerapplet}/bin/nm-applet --indicator &
-
-    # hyprctl setcursor Bibata-Modern-Ice 16 &
-
-    systemctl --user import-environment PATH &
-    systemctl --user restart xdg-desktop-portal.service &
-
-
-    # wait a tiny bit for wallpaper
-    sleep 2
-
-
-    ${pkgs.swww}/bin/swww img ${config.stylix.image} &
-
-    # wait for monitors to connect
-    sleep 3
-
-    # general startupScript extension
-  '';
-
   colors = config.lib.stylix.colors;
 
   exec-once =
