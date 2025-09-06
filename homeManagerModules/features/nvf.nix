@@ -95,7 +95,6 @@
         };
 
         autopairs.nvim-autopairs.enable = true;
-        treesitter.context.enable = true;
 
         options.shiftwidth = 4;
         utility.sleuth.enable = true;
