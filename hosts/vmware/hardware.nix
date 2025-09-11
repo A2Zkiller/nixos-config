@@ -1,12 +1,14 @@
-{delib, ...}:
+{ delib, ... }:
 delib.host {
-  name = "vmware"; 
+  name = "vmware";
 
-  homeManagerSystem = "x86_64-linux"; 
+  homeManagerSystem = "x86_64-linux";
   home.home.stateVersion = "23.11";
 
   nixos = {
-    nixpkgs.hostPlatform = "x86_64-linux"; 
-    system.stateVersion = "23.11"; 
+    imports = [ ./hardware-configuration.nix ];
+
+    nixpkgs.hostPlatform = "x86_64-linux";
+    system.stateVersion = "23.11";
   };
 }
