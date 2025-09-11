@@ -2,6 +2,6 @@
 delib.host {
   name = "vmware";
 
-  rice = "catppuccin";
+  rice = "catppuccin-mocha";
   type = "desktop";
 }
