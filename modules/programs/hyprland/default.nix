@@ -1,15 +1,11 @@
-{
-  delib,
-  hosts,
-  ...
-}:
+{delib, ...}:
 delib.module {
   name = "programs.hyprland";
 
-  options = {
+  options = {myconfig, ...}: {
     # programs.hyprland.enable = delib.boolOption (hosts.isDesktop);
 
-    programs.hyprland.enable = delib.boolOption true;
+    programs.hyprland.enable = delib.boolOption true; #myconfig.hosts.isPC;
   };
 
   nixos.ifEnabled.programs.hyprland.enable = true;
