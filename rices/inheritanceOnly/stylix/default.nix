@@ -13,10 +13,10 @@ delib.rice {
     stylix = {
       enable = true;
 
-      image = myconfig.rices.wallpaper;
-      polarity = myconfig.rices.polarity;
+      image = myconfig.constants.wallpaper;
+      polarity = myconfig.constants.polarity;
 
-      base16Scheme = myconfig.rices.base16Scheme;
+      base16Scheme = myconfig.constants.base16Scheme;
 
       fonts = {
         monospace = {
@@ -44,7 +44,7 @@ delib.rice {
 
       cursor = {
         name = "Bibata-Modern-${
-          if myconfig.rices.polarity == "dark"
+          if myconfig.constants.polarity == "dark"
           then "Ice"
           else "Classic"
         }";
