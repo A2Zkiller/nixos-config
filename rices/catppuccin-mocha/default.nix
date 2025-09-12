@@ -1,11 +1,16 @@
-{ delib, ... }:
+{
+  delib,
+  pkgs,
+  ...
+}:
 delib.rice {
   name = "catppuccin-mocha";
 
-  inherits = [ "stylix" ];
+  inherits = ["stylix"];
 
-  options.rices = with delib; {
-    wallpaper = pathOption ./wallpaper.png;
-    polarity = strOption "dark";
+  myconfig.rices = {
+    wallpaper = ./wallpaper.png;
+    polarity = "dark";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
   };
 }

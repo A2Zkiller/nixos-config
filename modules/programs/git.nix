@@ -1,19 +1,19 @@
-{ delib, ... }:
+{delib, ...}:
 delib.module {
   name = "programs.git";
 
   options = delib.singleEnableOption true;
 
-  home.ifEnabled.programs.git =
-    { myconfig, ... }:
-    {
+  home.ifEnabled = {myconfig, ...}: {
+    programs.git = {
       enable = true;
 
       userName = "A2Zkiller";
       userEmail = myconfig.constants.useremail;
 
       extraConfig = {
-        core.editor = "nvim";
+        core.editor = "hx";
       };
     };
+  };
 }
