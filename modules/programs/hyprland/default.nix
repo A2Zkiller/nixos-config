@@ -2,10 +2,10 @@
 delib.module {
   name = "programs.hyprland";
 
-  options.programs.hyprland =
+  options =
     { myconfig, ... }:
     {
-      enable = delib.boolOption myconfig.isDesktop;
+      programs.hyprland.enable = delib.boolOption (myconfig.isPC);
     };
 
   nixos.ifEnabled.programs.hyprland.enable = true;
