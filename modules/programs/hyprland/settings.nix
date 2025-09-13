@@ -125,7 +125,7 @@ in
             "$mainMod, G, togglegroup,"
             "$mainMod, bracketleft, changegroupactive, b"
             "$mainMod, bracketright, changegroupactive, f"
-            "$mainMod, S, exec, rofi -show drun -show-icons"
+            "$mainMod, S, exec, bemenu-run"
             "$mainMod, P, pin, active"
 
             "$mainMod, left, movefocus, l"
@@ -181,5 +181,6 @@ in
       swayimg
       swww
       rofi-wayland
+      bemenu
     ];
   }
