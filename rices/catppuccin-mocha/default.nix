@@ -6,8 +6,6 @@
 delib.rice {
   name = "catppuccin-mocha";
 
-  inherits = ["stylix"];
-
   myconfig.constants = {
     wallpaper = ./wallpaper.png;
     polarity = "dark";

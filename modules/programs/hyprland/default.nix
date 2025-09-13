@@ -3,7 +3,7 @@ delib.module {
   name = "programs.hyprland";
 
   options = {myconfig, ...}: {
-    # programs.hyprland.enable = delib.boolOption (hosts.isDesktop);
+    # TODO: Switch the default true option to hosts.isPC after issue 54 is resolved in denix
 
     programs.hyprland.enable = delib.boolOption true; #myconfig.hosts.isPC;
   };

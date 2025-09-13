@@ -10,6 +10,8 @@ delib.module {
 
       homeDirectory = "/home/${username}";
     };
+
+    programs.home-manager.enable = true;
   };
 
   nixos.always.home-manager = {

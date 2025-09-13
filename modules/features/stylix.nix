@@ -4,12 +4,10 @@
   pkgs,
   ...
 }:
-delib.rice {
+delib.module {
   name = "stylix";
 
-  inheritanceOnly = true;
-
-  home = {myconfig, ...}: {
+  home.ifEnabled = {myconfig, ...}: {
     stylix = {
       enable = true;
 
@@ -53,7 +51,7 @@ delib.rice {
         size = 20;
       };
     };
-
-    imports = [inputs.stylix.homeModules.stylix];
   };
+
+  home.always.imports = [inputs.stylix.homeModules.stylix];
 }
