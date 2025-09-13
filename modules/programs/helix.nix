@@ -36,11 +36,22 @@ delib.module {
         {
           name = "rust";
           auto-format = true;
+          # TODO: Add rust Formatter and Language Servers
+        }
+        {
+          name = "markdown";
+          language-servers = [
+            "markdown-marksman"
+            "markdown-markdown-oxide"
+          ];
         }
       ];
       language-server = {
         nix-nil.command = "${pkgs.nil}/bin/nil";
         nix-nixd.command = "${pkgs.nixd}/bin/nixd";
+
+        markdown-marksman.command = "${pkgs.marksman}/bin/marksman";
+        markdown-markdown-oxide.command = "${pkgs.markdown-oxide}/bin/markdown-oxide";
       };
     };
   };
