@@ -7,6 +7,8 @@
 delib.module {
   name = "stylix";
 
+  options = delib.singleEnableOption true;
+
   home.ifEnabled = {myconfig, ...}: {
     stylix = {
       enable = true;
