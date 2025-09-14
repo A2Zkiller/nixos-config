@@ -38,6 +38,7 @@
           (base.withConfig {
             args.enable = true;
           })
+          overlays
         ];
 
         specialArgs = {
