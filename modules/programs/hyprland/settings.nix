@@ -109,11 +109,6 @@ in
           new_status = "master";
         };
 
-        gestures = {
-          # See https://wiki.hyprland.org/Configuring/Variables/ for more
-          workspace_swipe = false;
-        };
-
         # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
         bind =
           [
