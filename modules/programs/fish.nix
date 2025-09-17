@@ -4,12 +4,12 @@
   ...
 }:
 delib.module {
-  name = "programs.zsh";
+  name = "programs.fish";
 
-  options = delib.singleEnableOption false;
+  options = delib.singleEnableOption true;
 
   home.ifEnabled.programs = {
-    zsh = {
+    fish = {
       enable = true;
       shellAliases = {
         cat = "${pkgs.bat}/bin/bat";
@@ -18,27 +18,21 @@ delib.module {
         grep = "grep --color=auto";
         cd = "z";
       };
-
-      oh-my-zsh = {
-        enable = true;
-        plugins = [
-          "git"
-          "rust"
-        ];
-        theme = "";
-      };
+      package = pkgs.fish;
     };
 
     zoxide = {
       enable = true;
-      enableZshIntegration = true;
+      enableFishIntegration = true;
     };
   };
 
   nixos.ifEnabled = {myconfig, ...}: let
     inherit (myconfig.constants) username;
   in {
-    users.users.${username}.shell = pkgs.zsh;
-    programs.zsh.enable = true;
+    users.users.${username} = {
+      shell = pkgs.fish;
+      ignoreShellProgramCheck = true;
+    };
   };
 }

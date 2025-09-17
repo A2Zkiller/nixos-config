@@ -1,4 +1,4 @@
-{ delib, ... }:
+{delib, ...}:
 delib.module {
   name = "programs.starship";
 
@@ -6,5 +6,6 @@ delib.module {
 
   home.ifEnabled.programs.starship = {
     enable = true;
+    enableFishIntegration = true;
   };
 }
