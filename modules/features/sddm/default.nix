@@ -11,7 +11,7 @@ delib.module {
 
   nixos.ifEnabled = {
     services.displayManager.sddm = {
-      enable = lib.mkDefault true;
+      enable = true;
       wayland.enable = true;
       # sddm.theme = "${sddmTheme}";
       theme = "catppuccin-mocha";
