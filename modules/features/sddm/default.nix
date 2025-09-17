@@ -13,19 +13,20 @@ delib.module {
     services.displayManager.sddm = {
       enable = true;
       wayland.enable = true;
-      # sddm.theme = "${sddmTheme}";
-      theme = "catppuccin-mocha";
+      theme = "catppuccin-mocha-mauve";
       package = pkgs.kdePackages.sddm;
     };
 
     environment.systemPackages = with pkgs; [
       (catppuccin-sddm.override {
         flavor = "mocha";
+        accent = "mauve";
         font = "JetBrainsMono Nerd Font Mono";
         fontSize = "12";
         loginBackground = true;
       })
 
+      nerd-fonts.jetbrains-mono
       libsForQt5.qt5.qtquickcontrols2
       libsForQt5.qt5.qtgraphicaleffects
     ];
