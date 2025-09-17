@@ -180,7 +180,6 @@ in
       wl-clipboard
       swayimg
       swww
-      rofi-wayland
       bemenu
     ];
   }

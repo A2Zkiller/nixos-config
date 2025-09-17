@@ -34,4 +34,11 @@ delib.module {
       enableZshIntegration = true;
     };
   };
+
+  nixos.ifEnabled = {myconfig, ...}: let
+    inherit (myconfig.constants) username;
+  in {
+    users.users.${username}.shell = pkgs.zsh;
+    programs.zsh.enable = true;
+  };
 }
