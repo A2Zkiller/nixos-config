@@ -1,5 +1,5 @@
 {delib, ...}: let
-  flake = "/home/a2z/nixos-config-denix";
+  flake = "/home/a2z/nixos-config";
 in
   delib.module
   {
