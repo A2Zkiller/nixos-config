@@ -1,13 +1,13 @@
 {
   delib,
   pkgs,
-  lib,
+  host,
   ...
 }:
 delib.module {
   name = "features.sddm";
 
-  options = delib.singleEnableOption true;
+  options = delib.singleEnableOption host.isPC;
 
   nixos.ifEnabled = {
     services.displayManager.sddm = {
