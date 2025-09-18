@@ -36,6 +36,8 @@ delib.module {
 
       whitelist = {
         A2Zkiller = "897eca78-1df5-4f1e-8b3e-c4cf14e03805";
+        Geykyume = "ecebe0cb-edcf-4b45-abe3-72a6659d9da1";
+        Gretticheu = "3a0e439c-93f9-41e3-9619-1c13827ea486";
       };
 
       symlinks = {
