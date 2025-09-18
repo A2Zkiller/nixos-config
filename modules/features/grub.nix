@@ -1,7 +1,6 @@
 {
   delib,
   host,
-  lib,
   ...
 }:
 delib.module {
@@ -17,8 +16,12 @@ delib.module {
     boot.loader.grub = {
       enable = true;
       useOSProber = true;
+      efiSupport = true;
 
-      device = lib.optionals (host.isPC) cfg.device;
+      device =
+        if host.isPC
+        then cfg.device
+        else "";
     };
   };
 }
