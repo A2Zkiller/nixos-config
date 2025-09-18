@@ -5,11 +5,14 @@ delib.host {
   rice = "catppuccin-mocha";
   type = "server";
 
-  myconfig.server = {
-    nix-minecraft = {
-      enable = true;
+  myconfig = {
+    features.grub.device = "/dev/vda";
 
-      main.enable = true;
+    server = {
+      nix-minecraft = {
+        enable = true;
+        main.enable = true;
+      };
     };
   };
 }

@@ -1,12 +1,24 @@
-{ delib, ... }:
+{
+  delib,
+  host,
+  lib,
+  ...
+}:
 delib.module {
   name = "features.grub";
 
-  options = delib.singleEnableOption true;
+  options = with delib;
+    moduleOptions {
+      enable = boolOption true;
+      device = strOption "/dev/sda";
+    };
 
-  nixos.ifEnabled.boot.loader.grub = {
-    enable = true;
-    device = "/dev/sda";
-    useOSProber = true;
+  nixos.ifEnabled = {cfg, ...}: {
+    boot.loader.grub = {
+      enable = true;
+      useOSProber = true;
+
+      device = lib.optionals (host.isPC) cfg.device;
+    };
   };
 }
