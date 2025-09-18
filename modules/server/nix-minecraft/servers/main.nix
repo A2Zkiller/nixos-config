@@ -17,7 +17,7 @@ delib.module {
 
       package = pkgs.fabricServers.fabric-1_21_8;
 
-      openFirewall = true;
+      openFirewall = false;
       autoStart = true;
       enableReload = true;
 
@@ -29,6 +29,9 @@ delib.module {
         view-distance = 16;
         simulation-distance = 10;
         spawn-protection = 0;
+        enable-rcon = true;
+        "rcon.port" = 25575;
+        "rcon.password" = "rcon";
         motd = "A2Zkiller's Minecraft Server";
       };
 
@@ -66,9 +69,20 @@ delib.module {
   nixos.ifEnabled.networking.firewall = {
     enable = true;
 
+    allowedTCPPorts = [
+      25565
+    ];
+
     allowedUDPPorts = [
       25565 # MC server Port
       24454 # Voice Chat Port
     ];
+
+    extraCommands = ''
+      iptables -A nixos-fw -p tcp --source localhost --dport 25575:25575 -j nixos-fw-accept
+      iptables -A nixos-fw -p udp --source localhost --dport 25575:25575 -j nixos-fw-accept
+    '';
   };
+
+  home.ifEnabled.home.packages = [pkgs.mcrcon];
 }
