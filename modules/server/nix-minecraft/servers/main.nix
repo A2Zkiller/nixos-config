@@ -26,6 +26,9 @@ delib.module {
         difficulty = 3; # Hard difficulty
         gamemode = 0;
         max-players = 25;
+        view-distance = 16;
+        simulation-distance = 10;
+        spawn-protection = 0;
         motd = "A2Zkiller's Minecraft Server";
       };
 
