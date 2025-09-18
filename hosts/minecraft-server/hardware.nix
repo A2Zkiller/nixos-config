@@ -1,6 +1,6 @@
 {delib, ...}:
 delib.host {
-  name = "vmware";
+  name = "minecraft-server";
 
   homeManagerSystem = "x86_64-linux";
   home.home.stateVersion = "23.11";
