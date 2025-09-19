@@ -42,6 +42,7 @@ delib.module {
         Geykyume = "ecebe0cb-edcf-4b45-abe3-72a6659d9da1";
         Gretticheu = "3a0e439c-93f9-41e3-9619-1c13827ea486";
         dearsister = "a32cb4e7-ac53-449c-8df8-dcdda79b8c16";
+        RichardHamock = "7c142b73-108d-49cf-8e4d-5ac031aed200";
       };
 
       symlinks = {
