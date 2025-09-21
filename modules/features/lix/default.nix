@@ -6,7 +6,7 @@
 delib.module {
   name = "features.lix";
 
-  options = delib.singleEnableOption false;
+  options = delib.singleEnableOption true;
 
-  nixos.ifEnabled.nix.package = pkgs.lixPackageSets.latest.lix;
+  nixos.ifEnabled.nix.package = pkgs.lixPackageSets.stable.lix;
 }
