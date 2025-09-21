@@ -43,6 +43,12 @@ delib.module {
         Gretticheu = "3a0e439c-93f9-41e3-9619-1c13827ea486";
         dearsister = "a32cb4e7-ac53-449c-8df8-dcdda79b8c16";
         RichardHamock = "7c142b73-108d-49cf-8e4d-5ac031aed200";
+        kunop = "fb7dea21-b143-4482-b128-332409953de8";
+        eggsleep = "774ebdc4-904c-4119-a999-454c565eeaa6";
+        Flooxify = "b9210e31-7ffa-4c85-a359-ba60f8620592";
+        osecus = "be1e9780-ee07-410c-9bc2-4cdf63bac1a0";
+        Lasl = "53ff5fbc-3361-4b4e-9b7c-8ea41e90e49f";
+        Fred2456 = "aaff5528-d4b4-40c4-9259-e5cd78befb35";
       };
 
       symlinks = {
