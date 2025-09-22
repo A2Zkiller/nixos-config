@@ -15,5 +15,7 @@ delib.module {
         core.editor = "hx";
       };
     };
+
+    programs.lazygit.enable = true;
   };
 }
