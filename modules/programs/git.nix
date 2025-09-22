@@ -1,4 +1,8 @@
-{delib, ...}:
+{
+  delib,
+  pkgs,
+  ...
+}:
 delib.module {
   name = "programs.git";
 
@@ -16,6 +20,9 @@ delib.module {
       };
     };
 
-    programs.lazygit.enable = true;
+    programs.lazygit = {
+      enable = true;
+      package = pkgs.lazygit;
+    };
   };
 }
