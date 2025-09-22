@@ -17,6 +17,7 @@ delib.module {
         tree = "${pkgs.eza}/bin/eza --color=auto --tree";
         grep = "grep --color=auto";
         cd = "z";
+        lg = "${pkgs.lazygit}";
       };
       package = pkgs.fish;
     };
