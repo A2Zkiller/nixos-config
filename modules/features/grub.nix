@@ -16,7 +16,7 @@ delib.module {
     boot.loader.grub = {
       enable = true;
       useOSProber = true;
-      efiSupport = true;
+      efiSupport = !host.isPC;
 
       device =
         if host.isPC
