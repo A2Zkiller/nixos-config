@@ -8,5 +8,7 @@ delib.host {
   nixos = {
     services.xserver.videoDrivers = ["vmware"];
     virtualisation.vmware.guest.enable = true;
+
+    time.timeZone = "America/New_York";
   };
 }
