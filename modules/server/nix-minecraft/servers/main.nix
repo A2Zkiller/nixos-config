@@ -12,7 +12,6 @@ delib.module {
     services.minecraft-servers = {
       enable = true;
       eula = true;
-      user = myconfig.constants.username;
 
       servers.main = {
         enable = true;
@@ -75,6 +74,8 @@ delib.module {
         };
       };
     };
+
+    users.users.${myconfig.constants.username}.extraGroups = ["minecraft"];
 
     networking.firewall = {
       enable = true;
