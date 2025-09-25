@@ -50,6 +50,7 @@ delib.module {
           osecus = "be1e9780-ee07-410c-9bc2-4cdf63bac1a0";
           Lasl = "53ff5fbc-3361-4b4e-9b7c-8ea41e90e49f";
           Fred2456 = "aaff5528-d4b4-40c4-9259-e5cd78befb35";
+          Furious_Flames = "f6e72c67-4596-4794-bb4d-dc175c968f13";
         };
 
         symlinks = {
