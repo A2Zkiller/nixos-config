@@ -71,6 +71,7 @@
   environment.systemPackages = with pkgs; [
     helix
     git
+    lazygit
   ];
 
   nixpkgs.config.allowUnfree = true;
