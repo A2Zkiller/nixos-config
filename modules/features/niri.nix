@@ -36,6 +36,11 @@
           "9" = settings;
         };
 
+        overview = {
+          backdrop-color = "#313244";
+          zoom = 0.7;
+        };
+
         binds = {
           "Mod+Return".spawn-sh = lib.getExe pkgs.alacritty;
           "Mod+Q".close-window = _:{};
