@@ -1,4 +1,4 @@
-{self, inputs, ...}: {
+{self, inputs, getSystem, ...}: {
   flake.nixosModules.myVmwareConfiguration = { config, pkgs, ... }:
 
 {
@@ -66,7 +66,7 @@
   # List packages installed in system profile. To search, run:
   environment.systemPackages = with pkgs; [
     helix
-    git
+    (getSystem pkgs.stdenv.hostPlatform.system).packages.git
     lazygit
   ];
 
