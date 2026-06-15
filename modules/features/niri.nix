@@ -19,7 +19,13 @@
         
         input.keyboard.xkb.layout = "us";
 
-        layout.gaps = 5;
+        layout = {
+          gaps = 5;
+
+          focus-ring = {
+            width = 3;
+          };
+        };
 
         workspaces = let
           settings = _:{};
