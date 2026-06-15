@@ -7,6 +7,7 @@
       self.nixosModules.myVmwareHardware
       self.nixosModules.niri
       self.nixosModules.vmwareGuestAdditions
+      self.nixosModules.lix
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
