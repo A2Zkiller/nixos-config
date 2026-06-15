@@ -95,6 +95,8 @@
           "Mod+Shift+8".move-column-to-workspace = "7";
           "Mod+Shift+9".move-column-to-workspace = "8";
           "Mod+Shift+0".move-column-to-workspace = "9";
+
+          "Mod+O".toggle-overview = _:{};
         };
       };
     };
