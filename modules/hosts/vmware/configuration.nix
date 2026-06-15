@@ -68,6 +68,7 @@
   environment.systemPackages = with pkgs; [
     helix
     (getSystem pkgs.stdenv.hostPlatform.system).packages.git
+    (getSystem pkgs.stdenv.hostPlatform.system).packages.jujutsu
     lazygit
   ];
 
