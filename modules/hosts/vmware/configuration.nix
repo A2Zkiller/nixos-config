@@ -39,11 +39,7 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm = {
-    enable = true;
-    wayland.enable = true;
-  };
+  services.displayManager.ly.enable = true;
 
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
