@@ -9,6 +9,6 @@
           email = "zureikatabdullah@gmail.com";
         };
       };
-    }.wrapper;
+    };
   };
 }
