@@ -5,6 +5,7 @@
     imports = [
       self.nixosModules.general
       self.nixosModules.niri
+      self.nixosModules.librewolf
     ];
 
     services.displayManager.ly.enable = true;
