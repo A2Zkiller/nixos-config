@@ -19,11 +19,24 @@
             installation_mode = "normal_installed";
           };
         };
+
+        FirefoxHome = {
+          Search = true;
+          TopSites = false;
+          SponsoredTopSites = false;
+          Highlights = false;
+          Pocket = false;
+          Stories = false;
+          SponsoredPocket = false;
+          SponsoredStories = false;
+          Snippets = false;
+        };
       };
 
       extraPrefs = ''
           defaultPref("sidebar.verticalTabs", true);
           defaultPref("sidebar.expandOnHover", true);
+          defaultPref("browser.sessionstore.resume_from_crash", true);
         '';
     };
   };
