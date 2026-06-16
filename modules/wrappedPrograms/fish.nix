@@ -5,7 +5,15 @@
 
       package = pkgs.fish;
 
-      runtimePkgs = [ pkgs.zoxide ];
+      runtimePkgs = [
+        pkgs.zoxide
+        pkgs.eza
+        pkgs.bat
+        pkgs.lazygit
+
+        self'.packages.git
+        self'.packages.jujutsu
+      ];
 
       shellAliases = {
         cat = "${lib.getExe pkgs.bat}";
@@ -16,6 +24,8 @@
       };
 
       configFile.content = ''
+        echo "Hello"
+        
         ${lib.getExe pkgs.zoxide} init fish --cmd cd | source
       '';
     };
