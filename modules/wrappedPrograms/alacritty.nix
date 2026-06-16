@@ -8,6 +8,10 @@
       settings = {
         terminal.shell = lib.getExe self'.packages.myFish;
 
+        general.import = [
+          "${pkgs.alacritty-theme}/share/alacritty-theme/catppuccin_mocha.toml"
+        ];
+
         font = {
           normal = {
             family = "JetBrainsMono Nerd Font";
