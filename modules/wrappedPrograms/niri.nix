@@ -4,6 +4,14 @@
       enable = true;
       package = self.packages.${pkgs.stdenv.hostPlatform.system}.myNiri;
     };
+
+    environment.systemPackages = let
+      selfpkgs = self.packages.${pkgs.stdenv.hostPlatform.system};
+      in [
+      selfpkgs.myNoctalia
+      selfpkgs.myLibrewolf
+      selfpkgs.myAlacritty
+    ];
   };
 
   perSystem = {pkgs, lib, self', ...}: {
