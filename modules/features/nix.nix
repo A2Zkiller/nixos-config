@@ -2,6 +2,7 @@
   flake.nixosModules.nix = {pkgs, ...}: {
     imports = [
       self.nixosModules.lix
+      self.nixosModules.nh
     ];
 
     nix.settings.experimental-features = ["nix-command" "flakes"];
