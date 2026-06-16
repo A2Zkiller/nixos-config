@@ -5,9 +5,8 @@
   imports =
     [ # Include the results of the hardware scan.
       self.nixosModules.myVmwareHardware
-      self.nixosModules.niri
       self.nixosModules.vmwareGuestAdditions
-      self.nixosModules.nix
+      self.nixosModules.desktop
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
