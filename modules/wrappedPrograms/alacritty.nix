@@ -8,7 +8,7 @@
       runtimePkgs = [ pkgs.nerd-fonts.jetbrains-mono ];
 
       settings = {
-        shell = lib.getExe self'.packages.myFish;
+        terminal.shell = lib.getExe self'.packages.myFish;
 
         font = {
           normal = {
