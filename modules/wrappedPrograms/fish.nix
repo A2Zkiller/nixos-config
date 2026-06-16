@@ -32,6 +32,8 @@
         TERM = "xterm-256color";
         COLORTERM = "truecolor";
       };
+
+      flags."--no-config" = false;
     };
   };
 }
