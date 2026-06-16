@@ -1,19 +1,10 @@
-{self, inputs, withSystem, ...}: {
-  flake.nixosModules.nh = {pkgs, ...}: {
+{self, inputs, ...}: {
+  flake.nixosModules.nh = {...}: {
     programs.nh = {
       enable = true;
       clean.enable = true;
 
-      package = withSystem pkgs.stdenv.hostPlatform.system ({config, ...}: config.packages.myNh);
+      flake = "/home/a2z/nixos-config";
     };
-  };
-
-  flake.wrappers.myNh = {pkgs, wlib, ...}: {
-    imports = [ wlib.modules.default ];
-
-    inherit pkgs;
-
-    drv = pkgs.nh;
-    env.NH_FLAKE = "/home/a2z/nixos-config";
   };
 }
