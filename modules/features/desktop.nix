@@ -6,6 +6,7 @@
       self.nixosModules.general
       self.nixosModules.niri
       self.nixosModules.librewolf
+      self.nixosModules.gtk
     ];
 
     services.displayManager.ly.enable = true;
