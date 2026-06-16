@@ -15,7 +15,7 @@
             icon-theme = "Papirus-Dark";
             color-scheme = "prefer-dark";
           };
-        }
+        };
       }];
     };
   };
