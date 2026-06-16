@@ -5,8 +5,6 @@
 
       package = pkgs.alacritty;
 
-      runtimePkgs = [ pkgs.nerd-fonts.jetbrains-mono ];
-
       settings = {
         terminal.shell = lib.getExe self'.packages.myFish;
 
