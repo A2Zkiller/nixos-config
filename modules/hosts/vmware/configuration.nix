@@ -60,10 +60,6 @@
 
   # List packages installed in system profile. To search, run:
   environment.systemPackages = with pkgs; [
-    helix
-    (getSystem pkgs.stdenv.hostPlatform.system).packages.git
-    (getSystem pkgs.stdenv.hostPlatform.system).packages.jujutsu
-    lazygit
   ];
 
   nixpkgs.config.allowUnfree = true;
