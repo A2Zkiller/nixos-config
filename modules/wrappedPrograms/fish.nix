@@ -14,7 +14,7 @@
 
         self'.packages.git
         self'.packages.jujutsu
-        self'.packages.helix
+        self'.packages.myHelix
       ];
 
       shellAliases = {
