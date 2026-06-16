@@ -12,12 +12,11 @@
         ls = "${lib.getExe pkgs.eza} --icons -a --group-directories-first";
         tree = "${lib.getExe pkgs.eza} --color=auto --tree";
         grep = "${lib.getExe pkgs.gnugrep} --color=auto";
-        cd = "z";
         lg = "${lib.getExe pkgs.lazygit}";
       };
 
       configFile.content = ''
-        ${lib.getExe pkgs.zoxide} init fish | source
+        ${lib.getExe pkgs.zoxide} init fish --cmd cd | source
       '';
     };
   };
