@@ -36,7 +36,9 @@
       extraPrefs = ''
           defaultPref("sidebar.verticalTabs", true);
           defaultPref("sidebar.expandOnHover", true);
+          defaultPref("sidebar.visibility", "expand-on-hover");
           defaultPref("browser.sessionstore.resume_from_crash", true);
+          defaultPref("browser.newtabpage.activity-stream.widgets.weather.enabled", false);
         '';
     };
   };
