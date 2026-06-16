@@ -1,5 +1,13 @@
-{self, inputs, ...}: {
-  perSystem = {pkgs, lib, ...}: {
+{
+  self,
+  inputs,
+  ...
+}: {
+  perSystem = {
+    pkgs,
+    lib,
+    ...
+  }: {
     packages.myLibrewolf = pkgs.wrapFirefox pkgs.librewolf-unwrapped {
       extraPolicies = {
         ExtensionSettings = {
@@ -14,7 +22,8 @@
           };
 
           "{76aabc99-c1a8-4c1e-832b-d4f2941d5a7a}" = {
-            install_url = "https://addons.mozilla.org/firefox/downloads/latest/"
+            install_url =
+              "https://addons.mozilla.org/firefox/downloads/latest/"
               + "catppuccin-mocha-mauve-git/latest.xpi";
             installation_mode = "normal_installed";
           };
@@ -38,12 +47,12 @@
       };
 
       extraPrefs = ''
-          defaultPref("sidebar.verticalTabs", true);
-          defaultPref("sidebar.expandOnHover", true);
-          defaultPref("sidebar.visibility", "expand-on-hover");
-          defaultPref("browser.sessionstore.resume_from_crash", true);
-          defaultPref("browser.newtabpage.activity-stream.widgets.weather.enabled", false);
-        '';
+        defaultPref("sidebar.verticalTabs", true);
+        defaultPref("sidebar.expandOnHover", true);
+        defaultPref("sidebar.visibility", "expand-on-hover");
+        defaultPref("browser.sessionstore.resume_from_crash", true);
+        defaultPref("browser.newtabpage.activity-stream.widgets.weather.enabled", false);
+      '';
     };
   };
 }

@@ -1,5 +1,13 @@
-{self, inputs, ...}: {
-  flake.nixosModules.niri = {pkgs, lib, ...}: {
+{
+  self,
+  inputs,
+  ...
+}: {
+  flake.nixosModules.niri = {
+    pkgs,
+    lib,
+    ...
+  }: {
     programs.niri = {
       enable = true;
       package = self.packages.${pkgs.stdenv.hostPlatform.system}.myNiri;
@@ -7,14 +15,19 @@
 
     environment.systemPackages = let
       selfpkgs = self.packages.${pkgs.stdenv.hostPlatform.system};
-      in [
+    in [
       selfpkgs.myNoctalia
       selfpkgs.myLibrewolf
       selfpkgs.myAlacritty
     ];
   };
 
-  perSystem = {pkgs, lib, self', ...}: {
+  perSystem = {
+    pkgs,
+    lib,
+    self',
+    ...
+  }: {
     packages.myNiri = inputs.wrapper-modules.wrappers.niri.wrap {
       inherit pkgs;
 
@@ -24,7 +37,7 @@
         ];
 
         xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
-        
+
         input.keyboard.xkb.layout = "us";
 
         layout = {
@@ -36,7 +49,7 @@
         };
 
         workspaces = let
-          settings = _:{};
+          settings = _: {};
         in {
           "0" = settings;
           "1" = settings;
@@ -57,34 +70,34 @@
 
         binds = {
           "Mod+Return".spawn-sh = lib.getExe self'.packages.myAlacritty;
-          "Mod+Q".close-window = _:{};
-          "Mod+Shift+Q".quit = _:{};
+          "Mod+Q".close-window = _: {};
+          "Mod+Shift+Q".quit = _: {};
           "Mod+S".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call launcher toggle";
-          "Mod+G".fullscreen-window = _:{};
-          "Mod+Shift+F".toggle-window-floating = _:{};
-          "Mod+C".center-column = _:{};
+          "Mod+G".fullscreen-window = _: {};
+          "Mod+Shift+F".toggle-window-floating = _: {};
+          "Mod+C".center-column = _: {};
 
           "Mod+F".spawn-sh = "${lib.getExe self'.packages.myLibrewolf}";
 
-          "Mod+H".focus-column-left = _:{};
-          "Mod+L".focus-column-right = _:{};
-          "Mod+K".focus-window-or-workspace-up = _:{};
-          "Mod+J".focus-window-or-workspace-down = _:{};
+          "Mod+H".focus-column-left = _: {};
+          "Mod+L".focus-column-right = _: {};
+          "Mod+K".focus-window-or-workspace-up = _: {};
+          "Mod+J".focus-window-or-workspace-down = _: {};
 
-          "Mod+Left".focus-column-left = _:{};
-          "Mod+Right".focus-column-right = _:{};
-          "Mod+Up".focus-window-or-workspace-up = _:{};
-          "Mod+Down".focus-window-or-workspace-down = _:{};
+          "Mod+Left".focus-column-left = _: {};
+          "Mod+Right".focus-column-right = _: {};
+          "Mod+Up".focus-window-or-workspace-up = _: {};
+          "Mod+Down".focus-window-or-workspace-down = _: {};
 
-          "Mod+Shift+H".move-column-left = _:{};
-          "Mod+Shift+L".move-column-right = _:{};
-          "Mod+Shift+K".move-window-up-or-to-workspace-up = _:{};
-          "Mod+Shift+J".move-window-down-or-to-workspace-down = _:{};
-          
-          "Mod+Shift+Left".move-column-left = _:{};
-          "Mod+Shift+Right".move-column-right = _:{};
-          "Mod+Shift+Up".move-window-up-or-to-workspace-up = _:{};
-          "Mod+Shift+Down".move-window-down-or-to-workspace-down = _:{};
+          "Mod+Shift+H".move-column-left = _: {};
+          "Mod+Shift+L".move-column-right = _: {};
+          "Mod+Shift+K".move-window-up-or-to-workspace-up = _: {};
+          "Mod+Shift+J".move-window-down-or-to-workspace-down = _: {};
+
+          "Mod+Shift+Left".move-column-left = _: {};
+          "Mod+Shift+Right".move-column-right = _: {};
+          "Mod+Shift+Up".move-window-up-or-to-workspace-up = _: {};
+          "Mod+Shift+Down".move-window-down-or-to-workspace-down = _: {};
 
           "Mod+Ctrl+H".set-column-width = "-5%";
           "Mod+Ctrl+L".set-column-width = "+5%";
@@ -118,7 +131,7 @@
           "Mod+Shift+9".move-column-to-workspace = "8";
           "Mod+Shift+0".move-column-to-workspace = "9";
 
-          "Mod+O".toggle-overview = _:{};
+          "Mod+O".toggle-overview = _: {};
         };
       };
     };

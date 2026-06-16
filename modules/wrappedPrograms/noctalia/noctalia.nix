@@ -1,5 +1,13 @@
-{self, inputs, ...}: {
-  perSystem = { pkgs, self', ...}: {
+{
+  self,
+  inputs,
+  ...
+}: {
+  perSystem = {
+    pkgs,
+    self',
+    ...
+  }: {
     packages.myNoctalia = inputs.wrapper-modules.wrappers.noctalia-shell.wrap {
       inherit pkgs;
 

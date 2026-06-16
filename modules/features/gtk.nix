@@ -1,15 +1,18 @@
-{self, inputs, ...}: {
-  flake.nixosModules.gtk = {pkgs, ...}:
-    let
-      icon-theme-name = "Papirus-Dark";
-      theme-name = "Catppuccin-Mocha-Standard-Mauve-Dark";
+{
+  self,
+  inputs,
+  ...
+}: {
+  flake.nixosModules.gtk = {pkgs, ...}: let
+    icon-theme-name = "Papirus-Dark";
+    theme-name = "Catppuccin-Mocha-Standard-Mauve-Dark";
 
-      gtk-settings = ''
-          [Settings]
-          gtk-icon-theme-name = ${icon-theme-name}
-          gtk-theme-name = ${theme-name}
-        '';
-    in {
+    gtk-settings = ''
+      [Settings]
+      gtk-icon-theme-name = ${icon-theme-name}
+      gtk-theme-name = ${theme-name}
+    '';
+  in {
     environment.systemPackages = [
       pkgs.papirus-icon-theme
       pkgs.magnetic-catppuccin-gtk
@@ -31,15 +34,17 @@
     programs.dconf = {
       enable = true;
 
-      profiles.user.databases = [{
-        settings = {
-          "org/gnome/desktop/interface" = {
-            gtk-theme = theme-name;
-            icon-theme = icon-theme-name;
-            color-scheme = "prefer-dark";
+      profiles.user.databases = [
+        {
+          settings = {
+            "org/gnome/desktop/interface" = {
+              gtk-theme = theme-name;
+              icon-theme = icon-theme-name;
+              color-scheme = "prefer-dark";
+            };
           };
-        };
-      }];
+        }
+      ];
     };
   };
 }

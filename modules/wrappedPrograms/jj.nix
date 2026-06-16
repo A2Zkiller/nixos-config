@@ -1,4 +1,8 @@
-{self, inputs, ...}: {
+{
+  self,
+  inputs,
+  ...
+}: {
   perSystem = {pkgs, ...}: {
     packages.jujutsu = inputs.wrappers.wrappers.jujutsu.wrap {
       inherit pkgs;

@@ -1,5 +1,10 @@
 {inputs, ...}: {
-  perSystem = {pkgs, lib, self', ...}: {
+  perSystem = {
+    pkgs,
+    lib,
+    self',
+    ...
+  }: {
     packages.myAlacritty = inputs.wrappers.wrappers.alacritty.wrap {
       inherit pkgs;
 

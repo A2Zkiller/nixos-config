@@ -1,4 +1,8 @@
-{self, inputs, ...}: {
+{
+  self,
+  inputs,
+  ...
+}: {
   flake.nixosModules.general = {pkgs, ...}: let
     selfpkgs = self.packages.${pkgs.stdenv.hostPlatform.system};
   in {

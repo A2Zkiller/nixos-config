@@ -1,5 +1,10 @@
 {inputs, ...}: {
-  perSystem = {pkgs, lib, self', ...}: {
+  perSystem = {
+    pkgs,
+    lib,
+    self',
+    ...
+  }: {
     packages.myFish = inputs.wrappers.wrappers.fish.wrap {
       inherit pkgs;
 
