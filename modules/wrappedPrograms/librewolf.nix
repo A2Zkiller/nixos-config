@@ -32,6 +32,8 @@
           Snippets = false;
         };
 
+        Homepage.StartPage = "previous-session";
+
         SearchEngines.Default = "DuckDuckGo";
       };
 
