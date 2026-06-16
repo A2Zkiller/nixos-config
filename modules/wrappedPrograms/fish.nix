@@ -5,12 +5,14 @@
 
       package = pkgs.fish;
 
+      runtimePkgs = [ pkgs.zoxide ];
+
       shellAliases = {
         cat = "${lib.getExe pkgs.bat}";
         ls = "${lib.getExe pkgs.eza} --icons -a --group-directories-first";
         tree = "${lib.getExe pkgs.eza} --color=auto --tree";
         grep = "${lib.getExe pkgs.gnugrep} --color=auto";
-        cd = "z"; # zoxide package is included from the config file below
+        cd = "z";
         lg = "${lib.getExe pkgs.lazygit}";
       };
 
