@@ -1,10 +1,10 @@
-{self, inputs, getSystem, ...}: {
+{self, inputs, withSystem, ...}: {
   flake.nixosModules.nh = {pkgs, ...}: {
     programs.nh = {
       enable = true;
       clean.enable = true;
 
-      package = (getSystem pkgs.stdenv.hostPlatform.system).packages.myNh;
+      package = withSystem pkgs.stdenv.hostPlatform.system ({config, ...}: config.packages.myNh);
     };
   };
 
