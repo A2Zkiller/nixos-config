@@ -56,6 +56,8 @@
           "Mod+Shift+F".toggle-window-floating = _:{};
           "Mod+C".center-column = _:{};
 
+          "Mod+F".spawn-sh = "${lib.getExe self'.packages.myLibrewolf}";
+
           "Mod+H".focus-column-left = _:{};
           "Mod+L".focus-column-right = _:{};
           "Mod+K".focus-window-or-workspace-up = _:{};
