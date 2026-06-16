@@ -10,6 +10,7 @@
         pkgs.eza
         pkgs.bat
         pkgs.lazygit
+        pkgs.fzf
 
         self'.packages.git
         self'.packages.jujutsu
@@ -24,9 +25,7 @@
       };
 
       configFile.content = ''
-        echo "Hello"
-        
-        ${lib.getExe pkgs.zoxide} init fish --cmd cd | source
+        zoxide init fish --cmd cd | source
       '';
     };
   };
