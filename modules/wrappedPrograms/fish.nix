@@ -26,6 +26,8 @@
 
       configFile.content = ''
         zoxide init fish --cmd cd | source
+
+        set -g fish_greeting ""
       '';
 
       env = {
