@@ -50,6 +50,7 @@
         binds = {
           "Mod+Return".spawn-sh = lib.getExe pkgs.alacritty;
           "Mod+Q".close-window = _:{};
+          "Mod+Shift+Q".quit = _:{};
           "Mod+S".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call launcher toggle";
           "Mod+G".fullscreen-window = _:{};
           "Mod+Shift+F".toggle-window-floating = _:{};
