@@ -3,7 +3,7 @@
     packages.myFish = inputs.wrappers.wrappers.fish.wrap {
       inherit pkgs;
 
-      package = pkgs.alacritty;
+      package = pkgs.fish;
 
       settings = {
         shellAliases = {
