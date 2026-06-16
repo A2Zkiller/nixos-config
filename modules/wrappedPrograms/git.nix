@@ -5,7 +5,7 @@
       email = "zureikatabdullah@gmail.com";
     in {
 
-    packages.git = inputs.wrappers.wrappedModules.git.wrap {
+    packages.git = inputs.wrappers.wrappers.git.wrap {
       inherit pkgs;
 
       package = pkgs.git;
