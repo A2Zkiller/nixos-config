@@ -1,5 +1,14 @@
-{self, inputs, ...}: {
-  perSystem = {pkgs, lib, self', ...}: {
+{
+  self,
+  inputs,
+  ...
+}: {
+  perSystem = {
+    pkgs,
+    lib,
+    self',
+    ...
+  }: {
     packages.myHelix = inputs.wrappers.wrappers.helix.wrap {
       inherit pkgs;
 
