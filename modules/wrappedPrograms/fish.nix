@@ -27,6 +27,11 @@
       configFile.content = ''
         zoxide init fish --cmd cd | source
       '';
+
+      env = {
+        TERM = "xterm-256color";
+        COLORTERM = "truecolor";
+      };
     };
   };
 }
