@@ -10,9 +10,10 @@
         ls = "${lib.getExe pkgs.eza} --icons -a --group-directories-first";
         tree = "${lib.getExe pkgs.eza} --color=auto --tree";
         grep = "${lib.getExe pkgs.gnugrep} --color=auto";
-        cd = "${lib.getExe pkgs.zoxide}";
+        cd = "z"; # zoxide package is included from the config file below
         lg = "${lib.getExe pkgs.lazygit}";
       };
+
       configFile.content = ''
         ${lib.getExe pkgs.zoxide} init fish | source
       '';
