@@ -1,6 +1,6 @@
 {self, inputs, ...}: {
   perSystem = {pkgs, ...}: {
-    packages.jujutsu = inputs.wrappers.wrapperModules.jujutsu.apply {
+    packages.jujutsu = inputs.wrappers.wrapperModules.jujutsu.wrap {
       inherit pkgs;
 
       settings = {
