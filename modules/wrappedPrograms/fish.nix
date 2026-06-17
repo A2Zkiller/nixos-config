@@ -16,6 +16,7 @@
         pkgs.bat
         pkgs.lazygit
         pkgs.fzf
+        pkgs.carapace
 
         self'.packages.git
         self'.packages.jujutsu
@@ -32,6 +33,9 @@
 
       configFile.content = ''
         zoxide init fish --cmd cd | source
+
+        set -Ux CARAPACE_BRIDGES 'zsh,fish,bash,inshellisense'
+        carapace _carapace | source
 
         set -g fish_greeting ""
       '';
