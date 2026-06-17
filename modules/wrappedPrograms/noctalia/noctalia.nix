@@ -21,6 +21,9 @@
           predefinedScheme = "Catppuccin";
           useWallpaperColors = false;
         };
+
+        wallpaper.enabled = false;
+        dock.enabled = false;
       };
     };
   };
