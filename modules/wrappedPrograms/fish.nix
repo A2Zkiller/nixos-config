@@ -17,6 +17,7 @@
         pkgs.lazygit
         pkgs.fzf
         pkgs.carapace
+        pkgs.btop
 
         self'.packages.git
         self'.packages.jujutsu
