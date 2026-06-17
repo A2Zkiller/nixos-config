@@ -14,6 +14,16 @@
       self.nixosModules.nix
     ];
 
+    users.users."a2z" = {
+      isNormalUser = true;
+      description = "a2z's account";
+      extraGroups = ["wheel" "networkmanager"];
+
+      initialPassword = "12345";
+
+      shell = selfpkgs.myFish;
+    };
+
     time.timeZone = lib.mkDefault "America/New_York";
 
     environment.variables = {
