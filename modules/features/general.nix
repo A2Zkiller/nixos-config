@@ -10,6 +10,10 @@
       self.nixosModules.nix
     ];
 
+    environment.variables = {
+      EDITOR = "hx";
+    };
+
     networking.networkmanager.enable = true;
   };
 }
