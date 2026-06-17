@@ -8,7 +8,10 @@
   in {
     imports = [
       self.nixosModules.general
+      self.nixosModules.audio
+
       self.nixosModules.niri
+
       self.nixosModules.librewolf
       self.nixosModules.gtk
     ];
