@@ -14,14 +14,18 @@
       self.nixosModules.myVmwareHardware
       self.nixosModules.vmwareGuestAdditions
       self.nixosModules.desktop
+      self.nixosModules.grub
     ];
 
     nix.settings.experimental-features = ["nix-command" "flakes"];
 
     # Bootloader.
-    boot.loader.grub.enable = true;
-    boot.loader.grub.device = "/dev/sda";
-    boot.loader.grub.useOSProber = true;
+    boot.loader.grub = {
+      device = "/dev/sda";
+      useOSProber = false;
+      efiSupport = false;
+      efiInstallAsRemovable = false;
+    };
 
     networking.hostName = "myVmware"; # Define your hostname.
 
