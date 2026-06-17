@@ -12,6 +12,8 @@
           name = "A2Zkiller";
           email = "zureikatabdullah@gmail.com";
         };
+
+        ui.default-command = ["log"];
       };
     };
   };
