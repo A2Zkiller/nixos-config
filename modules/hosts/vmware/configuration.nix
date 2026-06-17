@@ -19,14 +19,6 @@
 
     nix.settings.experimental-features = ["nix-command" "flakes"];
 
-    # Bootloader.
-    boot.loader.grub = {
-      device = "/dev/sda";
-      useOSProber = false;
-      efiSupport = false;
-      efiInstallAsRemovable = false;
-    };
-
     networking.hostName = "myVmware"; # Define your hostname.
 
     # Enable networking
