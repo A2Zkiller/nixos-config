@@ -13,7 +13,7 @@
           email = "zureikatabdullah@gmail.com";
         };
 
-        ui.default-command = ["log"];
+        ui.default-command = ["log" "--limit" "10"];
       };
     };
   };
