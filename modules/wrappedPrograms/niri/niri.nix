@@ -34,6 +34,10 @@
       settings = {
         spawn-at-startup = [
           (lib.getExe self'.packages.myNoctalia)
+
+          (lib.getExe (pkgs.writeShellScriptBin "wallpaper" ''
+            ${lib.getExe pkgs.swaybg} -m fill -i "${./wallpaper.jpg}"
+          ''))
         ];
 
         xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
