@@ -35,6 +35,15 @@
 
           size = 12.0;
         };
+
+        window = {
+          decorations = "None";
+
+          padding = {
+            x = 30;
+            y = 20;
+          };
+        };
       };
     };
   };
