@@ -28,9 +28,12 @@
     self',
     ...
   }: {
-    packages.myNiri = inputs.wrapper-modules.wrappers.niri.wrap {
     packages.myNiri = inputs.wrappers.wrappers.niri.wrap {
       inherit pkgs;
+
+      suffixVar = [
+        ["XCURSOR_PATH" ":" "${pkgs.bibata-cursors}/share/icons"]
+      ];
 
       settings = {
         spawn-at-startup = [
@@ -42,6 +45,11 @@
         ];
 
         xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
+
+        cursor = {
+          xcursor-theme = "Bibata-Modern-Ice";
+          xcursor-size = 30;
+        };
 
         input.keyboard.xkb.layout = "us";
 
