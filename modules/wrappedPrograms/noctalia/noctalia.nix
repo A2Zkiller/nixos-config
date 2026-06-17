@@ -8,10 +8,20 @@
     self',
     ...
   }: {
-    packages.myNoctalia = inputs.wrapper-modules.wrappers.noctalia-shell.wrap {
+    packages.myNoctalia = inputs.wrappers.wrappers.noctalia-shell.wrap {
       inherit pkgs;
 
-      settings = (builtins.fromJSON (builtins.readFile ./noctalia.json)).settings;
+      package = pkgs.noctalia-shell;
+
+      # settings = (builtins.fromJSON (builtins.readFile ./noctalia.json)).settings;
+
+      settings = {
+        colorSchemes = {
+          darkMode = true;
+          predefinedScheme = "Catppuccin";
+          useWallpaperColors = false;
+        };
+      };
     };
   };
 }
