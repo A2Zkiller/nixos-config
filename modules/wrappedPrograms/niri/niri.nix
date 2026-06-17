@@ -29,6 +29,7 @@
     ...
   }: {
     packages.myNiri = inputs.wrapper-modules.wrappers.niri.wrap {
+    packages.myNiri = inputs.wrappers.wrappers.niri.wrap {
       inherit pkgs;
 
       settings = {
