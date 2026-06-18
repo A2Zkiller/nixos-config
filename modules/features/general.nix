@@ -6,17 +6,20 @@
   flake.nixosModules.general = {
     pkgs,
     lib,
+    config,
     ...
   }: let
     selfpkgs = self.packages.${pkgs.stdenv.hostPlatform.system};
+    user = config.preferences.user.name;
   in {
     imports = [
       self.nixosModules.nix
+      self.nixosModules.base
     ];
 
-    users.users."a2z" = {
+    users.users.${user} = {
       isNormalUser = true;
-      description = "a2z's account";
+      description = "${user}'s account";
       extraGroups = ["wheel" "networkmanager"];
 
       initialPassword = "12345";
