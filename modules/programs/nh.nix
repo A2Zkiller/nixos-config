@@ -3,12 +3,14 @@
   inputs,
   ...
 }: {
-  flake.nixosModules.nh = {...}: {
+  flake.nixosModules.nh = {config, ...}: let
+    user = config.preferences.user.name;
+  in {
     programs.nh = {
       enable = true;
       clean.enable = true;
 
-      flake = "/home/a2z/nixos-config";
+      flake = "/home/${user}/nixos-config";
     };
   };
 }
