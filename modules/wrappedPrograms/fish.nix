@@ -18,6 +18,8 @@
         pkgs.fzf
         pkgs.carapace
         pkgs.btop
+        pkgs.ripgrep
+        pkgs.gnugrep
 
         self'.packages.git
         self'.packages.jujutsu
@@ -29,6 +31,7 @@
         ls = "${lib.getExe pkgs.eza} --icons -a --group-directories-first";
         tree = "${lib.getExe pkgs.eza} --color=auto --tree";
         grep = "${lib.getExe pkgs.gnugrep} --color=auto";
+        rg = "${lib.getExe pkgs.ripgrep}";
         lg = "${lib.getExe pkgs.lazygit}";
       };
 
