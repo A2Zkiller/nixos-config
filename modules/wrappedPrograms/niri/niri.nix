@@ -57,7 +57,8 @@
           gaps = 5;
 
           focus-ring = {
-            width = 3;
+            width = 4;
+            active-color = "#cba6f7";
           };
         };
 
