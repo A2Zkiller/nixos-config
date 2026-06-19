@@ -20,6 +20,10 @@
       selfpkgs.myLibrewolf
       selfpkgs.myAlacritty
     ];
+
+    environment.variables = {
+      NIXOS_OZONE_WL = "1";
+    };
   };
 
   perSystem = {
