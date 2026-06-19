@@ -6,11 +6,29 @@
   flake.nixosModules.niri = {
     pkgs,
     lib,
+    config,
     ...
-  }: {
+  }: let
+    monitors = config.preferences.monitors;
+
+    convertFormat = monitor:
+      if monitor.refreshRate != null
+      then "${monitor.resolution}@${monitor.refreshRate}"
+      else monitor.resolution;
+
+    monitorSettings = lib.listToAttrs (map (monitor: {
+        name = monitor.name;
+        value = {
+          mode = convertFormat monitor;
+        };
+      })
+      monitors);
+  in {
     programs.niri = {
       enable = true;
-      package = self.packages.${pkgs.stdenv.hostPlatform.system}.myNiri;
+      package = self.packages.${pkgs.stdenv.hostPlatform.system}.myNiri.wrap {
+        settings.outputs = monitorSettings;
+      };
     };
 
     environment.systemPackages = let
@@ -48,11 +66,11 @@
           ''))
         ];
 
-        outputs = {
-          "DP-1" = {
-            mode = "2560x1440";
-          };
-        };
+        # outputs = {
+        #   "DP-1" = {
+        #     mode = "2560x1440";
+        #   };
+        # };
 
         xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
 

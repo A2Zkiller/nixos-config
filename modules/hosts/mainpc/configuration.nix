@@ -27,6 +27,13 @@
       pkgs.vesktop
     ];
 
+    preferences.monitors = [
+      {
+        name = "DP-1";
+        resolution = "2560x1440";
+      }
+    ];
+
     boot.initrd.kernelModules = ["amdgpu"];
     hardware.amdgpu.overdrive.enable = true;
 
