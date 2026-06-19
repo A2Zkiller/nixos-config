@@ -5,7 +5,7 @@
 }: {
   flake.nixosConfigurations.mainpc = inputs.nixpkgs.lib.nixosSystem {
     modules = [
-      # TODO: Insert config here
+      self.nixosModules.mainpcConfiguration
     ];
   };
 }
