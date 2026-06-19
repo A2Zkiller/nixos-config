@@ -13,6 +13,7 @@
       self.nixosModules.zram
 
       self.nixosModules.pcUtils
+      self.nixosModules.media
 
       inputs.disko.nixosModules.disko
       self.diskoConfigurations.mainpcConfig
