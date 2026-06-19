@@ -10,6 +10,7 @@
       self.nixosModules.desktop
 
       self.nixosModules.grub
+      self.nixosModules.zram
 
       inputs.disko.nixosModules.disko
       self.diskoConfigurations.mainpcConfig
