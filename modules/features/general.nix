@@ -27,6 +27,8 @@
       shell = selfpkgs.myFish;
     };
 
+    services.udisks2.enable = true;
+
     time.timeZone = lib.mkDefault "America/New_York";
 
     environment.variables = {
