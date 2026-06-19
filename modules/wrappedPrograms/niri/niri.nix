@@ -124,6 +124,9 @@
           "Mod+Shift+Up".move-window-up-or-to-workspace-up = _: {};
           "Mod+Shift+Down".move-window-down-or-to-workspace-down = _: {};
 
+          "Mod+BracketLeft".consume-or-expel-window-left = _: {};
+          "Mod+BracketRight".consume-or-expel-window-right = _: {};
+
           "Mod+Ctrl+H".set-column-width = "-5%";
           "Mod+Ctrl+L".set-column-width = "+5%";
           "Mod+Ctrl+J".set-window-height = "-5%";
