@@ -7,5 +7,7 @@
       efiInstallAsRemovable = lib.mkDefault true;
       useOSProber = lib.mkDefault true;
     };
+
+    boot.loader.efi.canTouchEfiVariables = lib.mkDefault false;
   };
 }

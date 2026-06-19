@@ -8,6 +8,12 @@
           content = {
             type = "gpt";
             partitions = {
+              MBR = {
+                type = "EF02";
+                size = "1M";
+                priority = 1;
+              };
+
               ESP = {
                 name = "ESP";
                 size = "1G";
