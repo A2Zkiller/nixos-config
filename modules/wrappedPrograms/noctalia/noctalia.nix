@@ -22,6 +22,10 @@
           useWallpaperColors = false;
         };
 
+        bar = {
+          outerCorners = false;
+        };
+
         wallpaper.enabled = false;
         dock.enabled = false;
       };
