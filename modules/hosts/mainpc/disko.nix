@@ -3,7 +3,7 @@
     disko.devices = {
       disk = {
         main = {
-          device = "/dev/CHANGE_ME"; # TODO: Update device name on install
+          device = "/dev/nvme0n1";
           type = "disk";
           content = {
             type = "gpt";
