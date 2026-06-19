@@ -22,6 +22,10 @@
 
     time.timeZone = "America/New_York";
 
+    environment.systemPackages = [
+      pkgs.vesktop
+    ];
+
     boot.initrd.kernelModules = ["amdgpu"];
     hardware.cpu.amd.updateMicrocode = true;
 
