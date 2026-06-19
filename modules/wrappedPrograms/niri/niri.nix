@@ -44,6 +44,12 @@
           ''))
         ];
 
+        outputs = {
+          "DP-1" = {
+            mode = "2560x1440";
+          };
+        };
+
         xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
 
         cursor = {
