@@ -22,6 +22,7 @@
     networking.hostName = "mainpc";
 
     time.timeZone = "America/New_York";
+    time.hardwareClockInLocalTime = true;
 
     environment.systemPackages = [
       pkgs.vesktop
