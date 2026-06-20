@@ -13,6 +13,11 @@
   perSystem = {system, ...}: {
     _module.args.pkgs = import inputs.nixpkgs {
       inherit system;
+
+      config.permittedInsecurePackages = [
+        "librewolf-151.0.2-1"
+        "librewolf-unwrapped-151.0.2-1"
+      ];
     };
   };
 }
