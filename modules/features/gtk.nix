@@ -5,7 +5,7 @@
 }: {
   flake.nixosModules.gtk = {pkgs, ...}: let
     icon-theme-name = "Papirus-Dark";
-    theme-name = "Catppuccin-Mocha-Standard-Mauve-Dark";
+    theme-name = "Catppuccin-GTK-Dark";
 
     gtk-settings = ''
       [Settings]
