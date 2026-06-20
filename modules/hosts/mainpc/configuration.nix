@@ -26,6 +26,7 @@
 
     environment.systemPackages = [
       pkgs.vesktop
+      pkgs.alsa-scarlett-gui
     ];
 
     preferences.monitors = [
