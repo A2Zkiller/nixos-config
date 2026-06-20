@@ -7,10 +7,12 @@
     imports = [
       self.nixosModules.mainpcHardware
 
-      self.nixosModules.desktop
-
       self.nixosModules.grub
       self.nixosModules.zram
+
+      self.nixosModules.desktop
+
+      self.nixosModules.sober
 
       self.nixosModules.pcUtils
       self.nixosModules.media
