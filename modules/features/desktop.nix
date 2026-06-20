@@ -13,6 +13,8 @@
       self.nixosModules.niri
 
       self.nixosModules.librewolf
+      self.nixosModules.uget
+
       self.nixosModules.gtk
     ];
 
