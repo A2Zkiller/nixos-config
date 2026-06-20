@@ -8,7 +8,7 @@
     lib,
     ...
   }: {
-    packages.myLibrewolf = pkgs.wrapFirefox pkgs.librewolf-unwrapped {
+    packages.myLibrewolf = pkgs.wrapFirefox pkgs.librewolf-bin-unwrapped {
       extraPolicies = {
         ExtensionSettings = {
           "uBlock0@raymondhill.net" = {
