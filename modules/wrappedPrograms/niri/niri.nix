@@ -37,6 +37,8 @@
       selfpkgs.myNoctalia
       selfpkgs.myLibrewolf
       selfpkgs.myAlacritty
+
+      pkgs.wl-clipboard
     ];
 
     environment.variables = {
@@ -119,6 +121,22 @@
           "Mod+C".center-column = _: {};
 
           "Mod+F".spawn-sh = "${lib.getExe self'.packages.myLibrewolf}";
+
+          # Select region with slurp, screenshot with grim, store in clipboard
+          "Print".spawn-sh = ''
+            ${lib.getExe pkgs.grim} -g "$(${lib.getExe pkgs.slurp})" - | \
+            ${pkgs.wl-clipboard}/bin/wl-copy
+          '';
+
+          # Copy entire screen to clipboard
+          "Ctrl+Print".spawn-sh = ''
+            ${lib.getExe pkgs.grim} - | ${pkgs.wl-clipboard}/bin/wl-copy
+          '';
+
+          # Take clipboard and add annotations
+          "Mod+Shift+E".spawn-sh = ''
+            ${pkgs.wl-clipboard}/bin/wl-paste | ${lib.getExe pkgs.swappy} -f -
+          '';
 
           "Mod+H".focus-column-left = _: {};
           "Mod+L".focus-column-right = _: {};
