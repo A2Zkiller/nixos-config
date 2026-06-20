@@ -28,6 +28,7 @@
 
     environment.systemPackages = [
       pkgs.vesktop
+      pkgs.mangohud
       pkgs.alsa-scarlett-gui
     ];
 
