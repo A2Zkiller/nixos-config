@@ -35,10 +35,6 @@
       EDITOR = "hx";
     };
 
-    environment.systemPackages = [
-      pkgs.zstd
-    ];
-
     networking.networkmanager.enable = true;
   };
 }
