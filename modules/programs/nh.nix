@@ -8,7 +8,10 @@
   in {
     programs.nh = {
       enable = true;
-      clean.enable = true;
+      clean = {
+        enable = true;
+        extraArgs = "--keep 3";
+      };
 
       flake = "/home/${user}/nixos-config";
     };
