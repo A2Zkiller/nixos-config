@@ -33,7 +33,6 @@
 
     environment.systemPackages = [
       pkgs.zstd
-      pkgs.ncdu
     ];
 
     environment.variables = {

@@ -22,6 +22,7 @@
         pkgs.gnugrep
         pkgs.fzf
         pkgs.tldr
+        pkgs.ncdu
 
         self'.packages.git
         self'.packages.jujutsu
