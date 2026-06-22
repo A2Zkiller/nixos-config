@@ -21,6 +21,10 @@
 
         pkgs.marksman
         pkgs.markdown-oxide
+
+        pkgs.rust-analyzer
+        pkgs.rustfmt
+        pkgs.lldb
       ];
 
       settings = {
@@ -53,6 +57,15 @@
             language-servers = [
               "marksman"
               "markdown-oxide"
+            ];
+          }
+
+          {
+            name = "rust";
+            auto-format = true;
+            formatter.command = "${lib.getExe pkgs.rustfmt}";
+            language-servers = [
+              "rust-analyzer"
             ];
           }
         ];
