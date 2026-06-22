@@ -37,6 +37,7 @@
       selfpkgs.myNoctalia
       selfpkgs.myLibrewolf
       selfpkgs.myAlacritty
+      selfpkgs.myKitty
 
       pkgs.wl-clipboard
     ];
@@ -111,7 +112,7 @@
         };
 
         binds = {
-          "Mod+Return".spawn-sh = lib.getExe self'.packages.myAlacritty;
+          "Mod+Return".spawn-sh = lib.getExe self'.packages.myKitty;
           "Mod+Q".close-window = _: {};
           "Mod+Shift+Q".quit = _: {};
           "Mod+S".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call launcher toggle";
