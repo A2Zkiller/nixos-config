@@ -21,6 +21,7 @@
         pkgs.ripgrep
         pkgs.gnugrep
         pkgs.fzf
+        pkgs.tldr
 
         self'.packages.git
         self'.packages.jujutsu
