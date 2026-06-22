@@ -46,6 +46,10 @@
         set -g fish_greeting ""
       '';
 
+      plugins = [
+        pkgs.fishPlugins.pure
+      ];
+
       env = {
         TERM = "xterm-256color";
         COLORTERM = "truecolor";
