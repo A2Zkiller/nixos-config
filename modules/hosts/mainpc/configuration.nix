@@ -16,6 +16,8 @@
 
       self.nixosModules.sober
 
+      self.services.wlsunset
+
       self.nixosModules.pcUtils
       self.nixosModules.media
 
