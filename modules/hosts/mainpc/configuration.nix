@@ -12,6 +12,8 @@
 
       self.nixosModules.desktop
 
+      self.nixosModules.libreoffice
+
       self.nixosModules.sober
 
       self.nixosModules.pcUtils
