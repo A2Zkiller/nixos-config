@@ -47,6 +47,8 @@
 
     hardware.cpu.amd.updateMicrocode = true;
 
+    boot.tmp.cleanOnBoot = true;
+
     xdg.portal = {
       enable = true;
       extraPortals = [pkgs.xdg-desktop-portal-gtk];
