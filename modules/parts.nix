@@ -20,6 +20,8 @@
         "librewolf-unwrapped-151.0.1-2"
         "librewolf-bin-unwrapped-151.0.1-2"
       ];
+
+      config.allowUnfree = true;
     };
   };
 }
