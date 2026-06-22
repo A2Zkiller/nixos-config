@@ -23,6 +23,7 @@
         pkgs.fzf
         pkgs.tldr
         pkgs.ncdu
+        pkgs.p7zip
 
         self'.packages.git
         self'.packages.jujutsu
