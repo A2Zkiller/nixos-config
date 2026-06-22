@@ -35,7 +35,11 @@
 
       pkgs.mangohud
       pkgs.alsa-scarlett-gui
+
+      pkgs.yubioath-flutter
     ];
+
+    services.pcscd.enable = true;
 
     preferences.monitors = [
       {
