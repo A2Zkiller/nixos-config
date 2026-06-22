@@ -9,6 +9,7 @@
     imports = [
       self.nixosModules.general
       self.nixosModules.audio
+      self.nixosModules.printing
 
       self.nixosModules.niri
 
