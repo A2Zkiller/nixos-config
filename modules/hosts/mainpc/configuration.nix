@@ -15,6 +15,7 @@
       self.nixosModules.libreoffice
 
       self.nixosModules.sober
+      self.nixosModules.surfshark
 
       self.services.wlsunset
 
