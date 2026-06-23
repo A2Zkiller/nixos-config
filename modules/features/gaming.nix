@@ -34,6 +34,9 @@
 
       pkgs.steam-run
       pkgs.dxvk
+
+      pkgs.lsfg-vk
+      pkgs.lsfg-vk-ui
     ];
   };
 }
