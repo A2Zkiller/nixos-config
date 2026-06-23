@@ -26,7 +26,7 @@
     programs.gamescope.enable = true;
 
     environment.systemPackages = [
-      pkgs.lutris
+      pkgs.faugus-launcher
       pkgs.prismlauncher
 
       pkgs.mangohud
