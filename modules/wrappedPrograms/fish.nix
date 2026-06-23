@@ -24,6 +24,7 @@
         pkgs.tldr
         pkgs.ncdu
         pkgs.p7zip-rar
+        pkgs.file
 
         self'.packages.git
         self'.packages.jujutsu
