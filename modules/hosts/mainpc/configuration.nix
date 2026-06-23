@@ -11,6 +11,7 @@
       self.nixosModules.zram
 
       self.nixosModules.desktop
+      self.nixosModules.gaming
 
       self.nixosModules.libreoffice
 
