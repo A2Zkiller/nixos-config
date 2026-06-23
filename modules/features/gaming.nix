@@ -13,6 +13,13 @@
     programs.steam = {
       enable = true;
       protontricks.enable = true;
+
+      # Fix for steam pulse crash on startup
+      package = pkgs.steam.override {
+        extraEnv = {
+          PULSE_RUNTIME_PATH = "/nonexistent";
+        };
+      };
     };
 
     programs.gamemode.enable = true;
