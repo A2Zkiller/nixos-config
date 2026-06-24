@@ -37,6 +37,9 @@
 
       pkgs.lsfg-vk
       pkgs.lsfg-vk-ui
+
+      pkgs.bottles
+      pkgs.winetricks
     ];
   };
 }
