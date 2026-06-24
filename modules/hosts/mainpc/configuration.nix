@@ -61,6 +61,15 @@
       extraPortals = [pkgs.xdg-desktop-portal-gtk];
     };
 
+    # Keychron launcher setup
+    services.udev.extraRules = ''
+      # Keychron hidraw (Needed for WebUSB access on Chromium browsers)
+      KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3434", MODE="0660", GROUP="users", TAG+="uaccess"
+
+      # Configure USB (Example)
+      SUBSYSTEM=="usb",  ATTRS{idVendor}=="3434", ATTRS{idProduct}=="0b30", MODE="0660", GROUP="users", TAG+="uaccess"
+    '';
+
     system.stateVersion = "26.05";
   };
 }
