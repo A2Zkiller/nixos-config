@@ -26,6 +26,7 @@
         pkgs.p7zip-rar
         pkgs.file
         pkgs.yazi
+        pkgs.fd
 
         self'.packages.git
         self'.packages.jujutsu
