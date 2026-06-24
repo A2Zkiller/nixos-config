@@ -13,6 +13,7 @@
 
       serviceConfig = {
         Type = "simple";
+        ExecStartPre = "${pkgs.coreutils}/bin/sleep 2";
         ExecStart = "${lib.getExe pkgs.wlsunset} -S 06:00 -s 20:00";
       };
     };
