@@ -118,8 +118,10 @@
           "Mod+S".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call launcher toggle";
           "Mod+G".fullscreen-window = _: {};
           "Mod+M".maximize-column = _: {};
-          "Mod+V".toggle-window-floating = _: {};
           "Mod+C".center-column = _: {};
+
+          "Mod+V".switch-focus-between-floating-and-tiling = _: {};
+          "Mod+Shift+V".toggle-window-floating = _: {};
 
           "Mod+F".spawn-sh = "${lib.getExe self'.packages.myLibrewolf}";
 
