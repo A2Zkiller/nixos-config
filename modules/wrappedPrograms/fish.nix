@@ -25,12 +25,12 @@
         pkgs.ncdu
         pkgs.p7zip-rar
         pkgs.file
-        pkgs.yazi
         pkgs.fd
 
         self'.packages.git
         self'.packages.jujutsu
         self'.packages.myHelix
+        self'.packages.myYazi
       ];
 
       shellAliases = {
@@ -41,11 +41,24 @@
       };
 
       configFile.content = ''
+        # zoxide setup
         zoxide init fish --cmd cd | source
 
+        # carapace setup
         set -Ux CARAPACE_BRIDGES 'zsh,fish,bash,inshellisense'
         carapace _carapace | source
 
+        # yazi setup
+        function y
+        	set tmp (mktemp -t "yazi-cwd.XXXXXX")
+        	command yazi $argv --cwd-file="$tmp"
+        	if read -z cwd < "$tmp"; and [ "$cwd" != "$PWD" ]; and test -d "$cwd"
+        		builtin cd -- "$cwd"
+        	end
+        	command rm -f -- "$tmp"
+        end
+
+        # remove fish greeting
         set -g fish_greeting ""
       '';
 
