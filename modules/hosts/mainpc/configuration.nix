@@ -49,6 +49,8 @@
       }
     ];
 
+    boot.kernelPackages = pkgs.linuxPackages_latest;
+
     boot.initrd.kernelModules = ["amdgpu"];
     hardware.amdgpu.overdrive.enable = true;
 
