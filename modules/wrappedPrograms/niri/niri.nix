@@ -124,6 +124,7 @@
           "Mod+Shift+V".toggle-window-floating = _: {};
 
           "Mod+F".spawn-sh = "${lib.getExe self'.packages.myLibrewolf}";
+          "Mod+Shift+F".spawn-sh = "${lib.getExe self'.packages.myLibrewolf} -private-window";
 
           # Select region with slurp, screenshot with grim, store in clipboard
           "Print".spawn-sh = ''
