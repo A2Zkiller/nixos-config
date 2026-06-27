@@ -40,5 +40,7 @@
     };
 
     networking.networkmanager.enable = true;
+
+    documentation.man.cache.enable = true;
   };
 }
