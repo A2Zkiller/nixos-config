@@ -32,6 +32,7 @@
         self'.packages.jujutsu
         self'.packages.myHelix
         self'.packages.myYazi
+        self'.packages.myQalc
       ];
 
       shellAliases = {
