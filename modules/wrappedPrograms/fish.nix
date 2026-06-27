@@ -26,6 +26,7 @@
         pkgs.p7zip-rar
         pkgs.file
         pkgs.fd
+        pkgs.trash-cli
 
         self'.packages.git
         self'.packages.jujutsu
