@@ -24,6 +24,20 @@
 
         bar = {
           outerCorners = false;
+
+          widgets = {
+            left = [
+              {
+                clockColor = "none";
+                customFont = "";
+                formatHorizontal = "h:mm AP ddd, MMM dd yyyy";
+                formatVertical = "HH mm - dd MM";
+                id = "Clock";
+                tooltipFormat = "HH:mm";
+                useCustomFont = false;
+              }
+            ];
+          };
         };
 
         wallpaper.enabled = false;
