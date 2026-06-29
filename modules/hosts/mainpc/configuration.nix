@@ -35,6 +35,8 @@
     environment.systemPackages = [
       pkgs.vesktop
 
+      pkgs.zotero
+
       pkgs.alsa-scarlett-gui
 
       pkgs.yubioath-flutter
