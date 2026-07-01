@@ -19,17 +19,3 @@
     };
   };
 }
-{inputs, ...}: {
-  perSystem = {
-    pkgs,
-    lib,
-    self',
-    ...
-  }: {
-    packages.myEmacs = inputs.wrappers.wrappers.emacs.wrap {
-      inherit pkgs;
-
-      package = pkgs.emacs;
-    };
-  };
-}
