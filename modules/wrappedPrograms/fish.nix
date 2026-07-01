@@ -28,6 +28,8 @@
         pkgs.fd
         pkgs.trash-cli
 
+        pkgs.devenv
+
         self'.packages.git
         self'.packages.jujutsu
         self'.packages.myHelix
@@ -59,6 +61,9 @@
         	end
         	command rm -f -- "$tmp"
         end
+
+        # devenv setup
+        devenv hook fish | source
 
         # remove fish greeting
         set -g fish_greeting ""
