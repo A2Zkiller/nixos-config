@@ -1,0 +1,12 @@
+#+TITLE: A2Z's Emacs Config
+#+AUTHOR: A2Zkiller
+#+STARTUP: show-everything
+#+OPTIONS: toc:2
+
+* IMPORTANT LOAD FIRST
+** THEME
+
+#+begin_src emacs-lisp
+;; load catppuccin theme
+(load-theme 'catppuccin :no-confirm)
+#+end_src

@@ -4,13 +4,23 @@
     lib,
     self',
     ...
-  }: {
+  }: let
+    configDir = ./config;
+  in {
     packages.myEmacs = inputs.wrappers.wrappers.emacs.wrap {
       inherit pkgs;
 
       package = pkgs.emacs;
 
-      configFile = builtins.readFile ./config/init.el;
+      wrapperImplementation = lib.mkForce "nix";
+
+      runShell = [
+        ''
+          mkdir -p ~/.emacs.d/
+          ${lib.getExe pkgs.rsync} -a --checksum "${configDir}/" ~/.emacs.d/
+          chmod -R u+w ~/.emacs.d/
+        ''
+      ];
 
       emacsPackages = epkgs:
         with epkgs.melpaPackages; [

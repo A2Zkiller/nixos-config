@@ -1,2 +1,4 @@
-;; load catppuccin theme
-(load-theme 'catppuccin :no-confirm)
+(org-babel-load-file
+	(expand-file-name
+		"config.org"
+		user-emacs-directory))
