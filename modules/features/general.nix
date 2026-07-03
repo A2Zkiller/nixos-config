@@ -37,6 +37,11 @@
 
     networking.networkmanager.enable = true;
 
+    # TEMP: Fix pnpm insecure
+    nixpkgs.config.permittedInsecurePackages = [
+      "pnpm-10.29.2"
+    ];
+
     documentation.man.cache.enable = true;
   };
 }
