@@ -25,6 +25,7 @@
       emacsPackages = epkgs:
         with epkgs.melpaPackages; [
           catppuccin-theme
+          no-littering
         ];
     };
   };

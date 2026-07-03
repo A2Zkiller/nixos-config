@@ -1,0 +1,11 @@
+#+TITLE: A2Z's Emacs Early Init Config
+#+AUTHOR: A2Zkiller
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+
+* AUTO SAVE LOCATION IN EMACS USER DIR
+
+#+begin_src emacs-lisp
+  (require 'no-littering)
+#+end_src
+

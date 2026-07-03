@@ -1,12 +1,31 @@
 #+TITLE: A2Z's Emacs Config
 #+AUTHOR: A2Zkiller
-#+STARTUP: show-everything
+#+STARTUP: showeverything
 #+OPTIONS: toc:2
 
 * IMPORTANT LOAD FIRST
+** SAVE AND LOAD SESSION ON EXIT
+#+begin_src emacs-lisp
+  (desktop-save-mode 1)
+#+end_src
+
 ** THEME
 
+Load Catppuccin theme
 #+begin_src emacs-lisp
-;; load catppuccin theme
-(load-theme 'catppuccin :no-confirm)
+  (load-theme 'catppuccin :no-confirm)
 #+end_src
+
+
+* FONTS
+** SET FONT FACE
+
+#+begin_src emacs-lisp
+  (set-face-attribute 'default nil
+    :font "JetBrainsMono Nerd Font"
+    :height 110
+    :weight 'medium)
+
+  (add-to-list 'default-frame-alist '(font . "JetBrainsMono Nerd Font-12"))
+#+end_src
+
