@@ -32,7 +32,7 @@
     time.timeZone = lib.mkDefault "America/New_York";
 
     environment.variables = {
-      EDITOR = "hx";
+      EDITOR = lib.mkDefault "hx";
     };
 
     networking.networkmanager.enable = true;

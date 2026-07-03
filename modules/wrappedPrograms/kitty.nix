@@ -12,7 +12,7 @@
 
       settings = {
         shell = lib.getExe self'.packages.myFish;
-        editor = lib.getExe self'.packages.myHelix;
+        editor = lib.mkDefault (lib.getExe self'.packages.myHelix);
 
         hide_window_decorations = "yes";
         enable_audio_bell = "no";
