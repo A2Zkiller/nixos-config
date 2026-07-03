@@ -3,6 +3,10 @@
 #+STARTUP: showeverything
 #+OPTIONS: toc:2
 
+
+* TABLE OF CONTENTS :toc:
+
+
 * IMPORTANT LOAD FIRST
 ** THEME
 
@@ -41,7 +45,30 @@ Load Catppuccin theme
 #+end_src
 
 
+* ORG MODE
+** ENABLE TOC
+
+#+begin_src emacs-lisp
+  (if (require 'toc-org nil t)
+      (progn
+        (add-hook 'org-mode-hook 'toc-org-mode)
+
+        ;; enable in markdown, too
+        (add-hook 'markdown-mode-hook 'toc-org-mode)
+        (define-key markdown-mode-map (kbd "\C-c\C-o") 'toc-org-markdown-follow-thing-at-point))
+    (warn "toc-org not found"))
+#+end_src
+
+** ORG BULLETS
+
+#+begin_src emacs-lisp
+  (require 'org-bullets)
+  (add-hook 'org-mode-hook #'org-bullets-mode)
+#+end_src
+
+
 * WHICH-KEY
+
 #+begin_src emacs-lisp
   (which-key-mode 1)
 
@@ -55,5 +82,6 @@ Load Catppuccin theme
         which-key-side-window-max-height 0.25
         which-key-idle-delay 0.8
         which-key-max-description-length 25
-        which-key-allow-imprecise-window-fit t)
+        which-key-allow-imprecise-window-fit t
+  	which-key-separator " → ")
 #+end_src

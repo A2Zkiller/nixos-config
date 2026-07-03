@@ -25,7 +25,11 @@
       emacsPackages = epkgs:
         with epkgs.melpaPackages; [
           catppuccin-theme
+
           no-littering
+
+          toc-org
+          org-bullets
         ];
     };
   };
