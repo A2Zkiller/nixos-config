@@ -17,7 +17,7 @@
       runShell = [
         ''
           mkdir -p ~/.emacs.d/
-          ${lib.getExe pkgs.rsync} -a --checksum "${configDir}/" ~/.emacs.d/
+          ${lib.getExe pkgs.rsync} -a --no-t --checksum "${configDir}/" ~/.emacs.d/
           chmod -R u+w ~/.emacs.d/
         ''
       ];

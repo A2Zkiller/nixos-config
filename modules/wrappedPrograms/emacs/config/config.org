@@ -4,11 +4,6 @@
 #+OPTIONS: toc:2
 
 * IMPORTANT LOAD FIRST
-** SAVE AND LOAD SESSION ON EXIT
-#+begin_src emacs-lisp
-  (desktop-save-mode 1)
-#+end_src
-
 ** THEME
 
 Load Catppuccin theme
@@ -29,3 +24,18 @@ Load Catppuccin theme
   (add-to-list 'default-frame-alist '(font . "JetBrainsMono Nerd Font-12"))
 #+end_src
 
+
+* GUI TWEAKS
+** DISABLE MENUBAR TOOLBAR AND SCROLLBAR
+
+#+begin_src emacs-lisp
+  (menu-bar-mode -1)
+  (tool-bar-mode -1)
+  (scroll-bar-mode -1)
+#+end_src
+
+** DISPLAY LINE NUMBERS
+
+#+begin_src emacs-lisp
+  (global-display-line-numbers-mode 1)
+#+end_src
