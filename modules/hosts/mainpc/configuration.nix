@@ -13,6 +13,7 @@
       self.nixosModules.desktop
       self.nixosModules.gaming
 
+      self.nixosModules.emacs
       self.nixosModules.libreoffice
 
       self.nixosModules.sober

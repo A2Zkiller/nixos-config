@@ -38,7 +38,6 @@
       selfpkgs.myLibrewolf
       selfpkgs.myAlacritty
       selfpkgs.myKitty
-      selfpkgs.myEmacs
 
       pkgs.wl-clipboard
     ];
