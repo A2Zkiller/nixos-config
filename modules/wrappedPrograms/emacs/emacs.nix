@@ -30,6 +30,8 @@
 
           toc-org
           org-bullets
+
+          sudo-edit
         ];
     };
   };

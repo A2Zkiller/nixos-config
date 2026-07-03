@@ -5,7 +5,19 @@
 
 
 * TABLE OF CONTENTS :toc:
-
+- [[#important-load-first][IMPORTANT LOAD FIRST]]
+  - [[#theme][THEME]]
+- [[#fonts][FONTS]]
+  - [[#set-font-face][SET FONT FACE]]
+- [[#gui-tweaks][GUI TWEAKS]]
+  - [[#disable-menubar-toolbar-and-scrollbar][DISABLE MENUBAR TOOLBAR AND SCROLLBAR]]
+  - [[#display-line-numbers][DISPLAY LINE NUMBERS]]
+- [[#org-mode][ORG MODE]]
+  - [[#enable-toc][ENABLE TOC]]
+  - [[#org-bullets][ORG BULLETS]]
+  - [[#org-tempo][ORG TEMPO]]
+- [[#which-key][WHICH-KEY]]
+- [[#sudo-edit][SUDO EDIT]]
 
 * IMPORTANT LOAD FIRST
 ** THEME
@@ -64,6 +76,12 @@ Load Catppuccin theme
 #+begin_src emacs-lisp
   (require 'org-bullets)
   (add-hook 'org-mode-hook #'org-bullets-mode)
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+#+end_src
+
+** ORG TEMPO
+#+begin_src emacs-lisp
+ (require 'org-tempo)
 #+end_src
 
 
@@ -84,4 +102,13 @@ Load Catppuccin theme
         which-key-max-description-length 25
         which-key-allow-imprecise-window-fit t
   	which-key-separator " → ")
+#+end_src
+
+
+* SUDO EDIT
+
+#+begin_src emacs-lisp
+  (require 'sudo-edit)
+
+  (global-set-key (kbd "C-c C-r") 'sudo-edit)
 #+end_src
