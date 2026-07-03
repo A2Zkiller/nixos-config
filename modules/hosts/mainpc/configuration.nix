@@ -43,6 +43,8 @@
       pkgs.yubioath-flutter
     ];
 
+    programs.bcc.enable = true;
+
     services.pcscd.enable = true;
 
     preferences.monitors = [
