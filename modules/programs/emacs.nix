@@ -1,9 +1,5 @@
 {self, ...}: {
-  flake.nixosModules.emacs = {
-    pkgs,
-    lib,
-    ...
-  }: {
+  flake.nixosModules.emacs = {pkgs, ...}: {
     environment.systemPackages = [
       pkgs.emacs
 
@@ -11,7 +7,7 @@
     ];
 
     environment.variables = {
-      EDITOR = "${lib.getExe pkgs.emacs}";
+      EDITOR = "emacs";
     };
 
     # TODO: Setup Hjem emacs config from github
