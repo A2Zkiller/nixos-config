@@ -1,9 +1,19 @@
 {self, ...}: {
-  flake.nixosModules.emacs = {pkgs, ...}: {
-    services.emacs = {
-      enable = true;
-      package = self.packages.${pkgs.stdenv.hostPlatform.system}.myEmacs;
-      defaultEditor = true;
+  flake.nixosModules.emacs = {
+    pkgs,
+    lib,
+    ...
+  }: {
+    environment.systemPackages = [
+      pkgs.emacs
+
+      pkgs.git
+    ];
+
+    environment.variables = {
+      EDITOR = "${lib.getExe pkgs.emacs}";
     };
+
+    # TODO: Setup Hjem emacs config from github
   };
 }

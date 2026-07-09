@@ -35,7 +35,6 @@
         self'.packages.myHelix
         self'.packages.myYazi
         self'.packages.myQalc
-        self'.packages.myEmacs
       ];
 
       shellAliases = {
