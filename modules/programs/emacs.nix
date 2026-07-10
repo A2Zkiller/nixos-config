@@ -8,13 +8,20 @@
     user = config.preferences.user.name;
   in {
     environment.systemPackages = [
-      pkgs.emacs
+      pkgs.myEmacs
 
       pkgs.git
     ];
 
     environment.variables = {
       EDITOR = "emacs";
+    };
+
+    nixpkgs.config.packageOverrides = pkgs: rec {
+      myEmacs = pkgs.emacs.pkgs.withPackages (epkgs:
+        with epkgs; [
+          vterm
+        ]);
     };
 
     # TODO: Setup Hjem emacs config from github
