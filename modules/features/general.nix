@@ -15,6 +15,8 @@
     imports = [
       self.nixosModules.nix
       self.nixosModules.base
+
+      self.nixosModules.hjem
     ];
 
     users.users.${user} = {
