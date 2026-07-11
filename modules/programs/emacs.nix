@@ -14,7 +14,7 @@
     ];
 
     environment.variables = {
-      EDITOR = "emacs";
+      EDITOR = "emacsclient";
     };
 
     nixpkgs.config.packageOverrides = pkgs: rec {
@@ -23,6 +23,12 @@
           vterm
         ]);
     };
+
+    fonts.packages = [
+      pkgs.emacs-all-the-icons-fonts
+      pkgs.nerd-fonts.jetbrains-mono
+      pkgs.noto-fonts
+    ];
 
     # TODO: Setup Hjem emacs config from github
     # hjem.users.${user} = {
