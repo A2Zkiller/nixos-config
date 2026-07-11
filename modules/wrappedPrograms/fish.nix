@@ -46,7 +46,7 @@
 
       configFile.content = ''
         # zoxide setup
-        zoxide init fish --cmd cd | source
+        zoxide init fish | source
 
         # carapace setup
         set -Ux CARAPACE_BRIDGES 'zsh,fish,bash,inshellisense'
