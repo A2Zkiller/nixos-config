@@ -4,13 +4,10 @@
     lib,
     self',
     ...
-  }: {
-    packages.myFish = inputs.wrappers.wrappers.fish.wrap {
-      inherit pkgs;
-
-      package = pkgs.fish;
-
-      runtimePkgs = [
+  }: let
+    runtimeTools = pkgs.buildEnv {
+      name = "myFish-runtime-tools";
+      paths = [
         pkgs.zoxide
         pkgs.eza
         pkgs.bat
@@ -20,7 +17,6 @@
         pkgs.btop
         pkgs.ripgrep
         pkgs.gnugrep
-        pkgs.fzf
         pkgs.tldr
         pkgs.ncdu
         pkgs.p7zip-rar
@@ -36,6 +32,14 @@
         self'.packages.myYazi
         self'.packages.myQalc
       ];
+    };
+  in {
+    packages.myFish = inputs.wrappers.wrappers.fish.wrap {
+      inherit pkgs;
+
+      package = pkgs.fish;
+
+      runtimePkgs = [runtimeTools];
 
       shellAliases = {
         ls = "${lib.getExe pkgs.eza} --icons -a --group-directories-first";
