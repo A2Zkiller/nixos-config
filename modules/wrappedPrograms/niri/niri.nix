@@ -36,7 +36,6 @@
     in [
       selfpkgs.myNoctalia
       selfpkgs.myLibrewolf
-      selfpkgs.myAlacritty
       selfpkgs.myKitty
 
       pkgs.wl-clipboard

@@ -11,6 +11,9 @@
       pkgs.myEmacs
 
       pkgs.git
+
+      pkgs.direnv
+      pkgs.devenv
     ];
 
     environment.variables = {

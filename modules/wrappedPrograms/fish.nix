@@ -25,6 +25,7 @@
         pkgs.trash-cli
 
         pkgs.devenv
+        pkgs.direnv
 
         self'.packages.git
         self'.packages.jujutsu
@@ -66,8 +67,8 @@
         	command rm -f -- "$tmp"
         end
 
-        # devenv setup
-        devenv hook fish | source
+        # direnv hook
+        direnv hook fish | source
 
         # remove fish greeting
         set -g fish_greeting ""
