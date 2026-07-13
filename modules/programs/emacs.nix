@@ -6,11 +6,14 @@
     ...
   }: let
     user = config.preferences.user.name;
+
+    selfpkgs = self.packages.${pkgs.stdenv.hostPlatform.system};
   in {
     environment.systemPackages = [
       pkgs.myEmacs
 
-      pkgs.git
+      selfpkgs.git
+      selfpkgs.jujutsu
 
       pkgs.direnv
       pkgs.devenv
