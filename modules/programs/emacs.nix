@@ -1,12 +1,5 @@
 {self, ...}: {
-  flake.nixosModules.emacs = {
-    pkgs,
-    lib,
-    config,
-    ...
-  }: let
-    user = config.preferences.user.name;
-
+  flake.nixosModules.emacs = {pkgs, ...}: let
     selfpkgs = self.packages.${pkgs.stdenv.hostPlatform.system};
   in {
     environment.systemPackages = [
@@ -17,6 +10,8 @@
 
       pkgs.direnv
       pkgs.devenv
+
+      pkgs.rassumfrassum
     ];
 
     environment.variables = {
@@ -27,6 +22,8 @@
       myEmacs = pkgs.emacs.pkgs.withPackages (epkgs:
         with epkgs; [
           vterm
+
+          treesit-grammars.with-all-grammars
         ]);
     };
 
@@ -35,28 +32,5 @@
       pkgs.nerd-fonts.jetbrains-mono
       pkgs.noto-fonts
     ];
-
-    # TODO: Setup Hjem emacs config from github
-    # hjem.users.${user} = {
-    #   enable = true;
-
-    #   # into ~/.config/emacs
-    #   xdg.config.files.emacs = {
-    #     source = pkgs.fetchFromGitHub {
-    #       owner = "A2Zkiller";
-    #       repo = "emacs-config";
-    #       rev = "833a21f";
-    #       hash = lib.fakeHash;
-    #     };
-
-    #     type = "directory";
-    #     permissions = "644";
-    #     clobber = false;
-    #   };
-    # };
-
-    # imports = [
-    #   self.nixosModules.hjem
-    # ];
   };
 }
