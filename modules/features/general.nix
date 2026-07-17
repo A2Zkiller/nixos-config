@@ -46,9 +46,9 @@
 
     networking.networkmanager.enable = true;
 
-    # TEMP: Fix pnpm insecure
     nixpkgs.config.permittedInsecurePackages = [
-      "pnpm-10.29.2"
+      # FIX: Insecure Package
+      "electron-40.10.5"
     ];
 
     documentation.man.cache.enable = true;

@@ -20,7 +20,6 @@
       self.nixosModules.surfshark
 
       self.services.wlsunset
-      self.nixosModules.deluge
 
       self.nixosModules.pcUtils
       self.nixosModules.media
