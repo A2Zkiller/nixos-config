@@ -16,6 +16,7 @@
       pkgs.devenv
 
       pkgs.rassumfrassum # multiple lsp servers with eglot
+      pkgs.emacs-lsp-booster
     ];
 
     environment.variables = {
