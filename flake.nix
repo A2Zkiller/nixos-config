@@ -16,6 +16,8 @@
     };
 
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
+    # TEMP: pinned nixpkgs for flatpack glycin issue
+    nixpkgs-flatpak.url = "github:NixOS/nixpkgs/51effaf9783e0226281ad10e95a4af6c8a145316";
 
     hjem = {
       url = "github:feel-co/hjem";
