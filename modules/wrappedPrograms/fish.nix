@@ -13,7 +13,6 @@
         pkgs.bat
         pkgs.lazygit
         pkgs.fzf
-        pkgs.carapace
         pkgs.btop
         pkgs.ripgrep
         pkgs.gnugrep
@@ -52,10 +51,6 @@
       configFile.content = ''
         # zoxide setup
         zoxide init fish | source
-
-        # carapace setup
-        set -Ux CARAPACE_BRIDGES 'zsh,fish,bash,inshellisense'
-        carapace _carapace | source
 
         # yazi setup
         function y
