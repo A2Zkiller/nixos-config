@@ -32,10 +32,10 @@
 
   perSystem = {pkgs, ...}: {
     packages.myEmacs = pkgs.emacs.pkgs.withPackages (epkgs:
-        with epkgs; [
-          vterm
+      with epkgs; [
+        vterm
 
-          treesit-grammars.with-all-grammars
-        ]);
+        treesit-grammars.with-all-grammars
+      ]);
   };
 }
