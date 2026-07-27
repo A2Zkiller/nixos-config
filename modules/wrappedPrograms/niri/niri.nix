@@ -110,6 +110,14 @@
           hot-corners.off = _: {};
         };
 
+        window-rules = [
+          {
+            matches = [{app-id = "librewolf";}];
+
+            open-maximized = true;
+          }
+        ];
+
         binds = {
           "Mod+Return".spawn-sh = lib.getExe self'.packages.myKitty;
           "Mod+Q".close-window = _: {};
