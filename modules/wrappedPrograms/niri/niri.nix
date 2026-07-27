@@ -112,7 +112,10 @@
 
         window-rules = [
           {
-            matches = [{app-id = "librewolf";}];
+            matches = [
+              {app-id = "librewolf";}
+              {app-id = "Emacs";}
+            ];
 
             open-maximized = true;
           }
