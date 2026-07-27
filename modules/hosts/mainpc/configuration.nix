@@ -40,6 +40,7 @@
 
       pkgs.alsa-scarlett-gui
 
+      pkgs.localsend
       pkgs.yubioath-flutter
     ];
 
