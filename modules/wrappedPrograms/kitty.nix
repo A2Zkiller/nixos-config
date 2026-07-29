@@ -4,8 +4,8 @@
     lib,
     self',
     ...
-  }: {
-    packages.myKitty = inputs.wrappers.wrappers.kitty.wrap {
+  }: let
+  kittyBase = inputs.wrappers.wrappers.kitty.wrap {
       inherit pkgs;
 
       package = pkgs.kitty;
@@ -30,6 +30,17 @@
       };
 
       themeFile = "Catppuccin-Mocha";
+  };
+
+    configDir = dirOf kittyBase.configuration.flags."--config".data;
+  in
+{
+    packages.myKitty = kittyBase.wrap {
+      env = {
+        KITTY_CONFIG_DIRECTORY = configDir;
+      };
+
+      flags."--config" = lib.mkForce false;
     };
   };
 }
