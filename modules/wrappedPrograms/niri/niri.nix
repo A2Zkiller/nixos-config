@@ -75,7 +75,11 @@
           xcursor-size = 30;
         };
 
-        input.keyboard.xkb.layout = "us";
+        input = {
+          keyboard.xkb.layout = "us";
+
+	  mouse.accel-profile = "flat";
+        };
 
         layout = {
           gaps = 5;
