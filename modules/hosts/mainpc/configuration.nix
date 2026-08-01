@@ -21,6 +21,7 @@
 
       self.services.wlsunset
 
+      self.nixosModules.gdb
       self.nixosModules.pcUtils
       self.nixosModules.media
 
