@@ -5,7 +5,11 @@
 }: {
   flake.nixosModules.gtk = {pkgs, ...}: let
     icon-theme-name = "Papirus-Dark";
-    theme-name = "Catppuccin-GTK-Dark";
+    theme-name = "catppuccin-mocha-lavender-standard";
+    theme-package = pkgs.catppuccin-gtk.override {
+      variant = "mocha";
+      accents = ["lavender"];
+    };
 
     gtk-settings = ''
       [Settings]
@@ -15,7 +19,7 @@
   in {
     environment.systemPackages = [
       pkgs.papirus-icon-theme
-      pkgs.magnetic-catppuccin-gtk
+      theme-package
 
       pkgs.gtk3
       pkgs.gtk4
