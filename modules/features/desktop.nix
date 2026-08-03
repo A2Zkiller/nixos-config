@@ -14,6 +14,7 @@
       self.nixosModules.niri
 
       self.nixosModules.librewolf
+      self.nixosModules.zathura
       self.nixosModules.uget
 
       self.nixosModules.gtk
