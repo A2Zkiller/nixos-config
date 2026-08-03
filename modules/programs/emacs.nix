@@ -34,6 +34,7 @@
     packages.myEmacs = pkgs.emacs.pkgs.withPackages (epkgs:
       with epkgs; [
         vterm
+	auctex
 
         treesit-grammars.with-all-grammars
       ]);
