@@ -1,6 +1,20 @@
 {self, ...}: {
   flake.nixosModules.emacs = {pkgs, ...}: let
     selfpkgs = self.packages.${pkgs.stdenv.hostPlatform.system};
+
+    tex = pkgs.texliveBasic.withPackages (
+      ps:
+        with ps; [
+          dvisvgm
+          dvipng # for preview and export as html
+          wrapfig
+          amsmath
+          ulem
+          hyperref
+          capt-of
+	  metafont
+        ]
+    );
   in {
     services.emacs = {
       enable = true;
@@ -14,6 +28,8 @@
 
       pkgs.direnv
       pkgs.devenv
+
+      tex
 
       pkgs.rassumfrassum # multiple lsp servers with eglot
       pkgs.emacs-lsp-booster
@@ -34,7 +50,7 @@
     packages.myEmacs = pkgs.emacs.pkgs.withPackages (epkgs:
       with epkgs; [
         vterm
-	auctex
+        auctex
 
         treesit-grammars.with-all-grammars
       ]);
