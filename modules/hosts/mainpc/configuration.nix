@@ -16,6 +16,8 @@
       self.nixosModules.emacs
       self.nixosModules.libreoffice
 
+      self.nixosModules.davinci-resolve
+
       self.nixosModules.sober
       self.nixosModules.surfshark
 
