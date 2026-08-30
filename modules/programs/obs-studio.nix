@@ -1,11 +1,11 @@
-{
-  flake.nixosModules.obs-studio = {pkgs, ...}: {
+{self, ...}: {
+  flake.nixosModules.obs-studio = {
     programs.obs-studio = {
       enable = true;
     };
 
-    environment.systemPackages = [
-      pkgs.ffmpeg
+    imports = [
+      self.nixosModules.ffmpeg
     ];
   };
 }

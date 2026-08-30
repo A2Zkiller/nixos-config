@@ -1,5 +1,9 @@
 {self, inputs, ...}: {
   flake.nixosModules.davinci-resolve = {pkgs, ...}: {
+    imports = [
+      self.nixosModules.ffmpeg
+    ];
+
     environment.systemPackages = [
       pkgs.davinci-resolve-studio
     ];
