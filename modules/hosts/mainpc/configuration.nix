@@ -16,6 +16,8 @@
       self.nixosModules.emacs
       self.nixosModules.libreoffice
 
+      self.nixosModules.freecad
+
       self.nixosModules.obs-studio
       self.nixosModules.davinci-resolve
 
