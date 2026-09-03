@@ -79,6 +79,9 @@
           keyboard.xkb.layout = "us";
 
 	  mouse.accel-profile = "flat";
+
+	  disable-power-key-handling = _: {};
+	  focus-follows-mouse = _: {};
         };
 
         layout = {
