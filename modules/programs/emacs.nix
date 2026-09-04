@@ -36,7 +36,7 @@
     ];
 
     environment.variables = {
-      EDITOR = "emacsclient";
+      EDITOR = "emacsclient -c";
     };
 
     fonts.packages = [
