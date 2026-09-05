@@ -19,6 +19,9 @@
     # TEMP: pinned nixpkgs for flatpack glycin issue
     nixpkgs-flatpak.url = "github:NixOS/nixpkgs/51effaf9783e0226281ad10e95a4af6c8a145316";
 
+    # TEMP: pinned nixpkgs for xwayland-satellite
+    nixpkgs-xwayland-satellite.url = "github:NixOS/nixpkgs/c4e0120b295daaac44f245f1c50ec06e844fe53b";
+
     hjem = {
       url = "github:feel-co/hjem";
       inputs.nixpkgs.follows = "nixpkgs";

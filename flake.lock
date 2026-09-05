@@ -137,6 +137,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-xwayland-satellite": {
+      "locked": {
+        "lastModified": 1784606363,
+        "narHash": "sha256-7Z/92/jbGS/0iUMsH0DjN7eBP4DdxSWaXpoiEYOA/9M=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "c4e0120b295daaac44f245f1c50ec06e844fe53b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "c4e0120b295daaac44f245f1c50ec06e844fe53b",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "disko": "disko",
@@ -146,6 +162,7 @@
         "nix-flatpak": "nix-flatpak",
         "nixpkgs": "nixpkgs",
         "nixpkgs-flatpak": "nixpkgs-flatpak",
+        "nixpkgs-xwayland-satellite": "nixpkgs-xwayland-satellite",
         "wrappers": "wrappers"
       }
     },

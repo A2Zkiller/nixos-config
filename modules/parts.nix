@@ -15,6 +15,16 @@
       inherit system;
 
       config.allowUnfree = true;
+
+      # FIX: xwayland-satellite overlay
+      overlays = [
+        (final: prev: {
+          xwayland-satellite =
+            (import inputs.nixpkgs-xwayland-satellite {
+              system = prev.stdenv.hostPlatform.system;
+            }).xwayland-satellite;
+        })
+      ];
     };
   };
 }

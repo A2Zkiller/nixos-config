@@ -44,6 +44,15 @@
     environment.variables = {
       NIXOS_OZONE_WL = "1";
     };
+
+    # FIX: xwayland-satellite overlay
+    # nixpkgs.overlays = [
+    #   (final: prev: {
+    # 	xwayland-satellite = (import inputs.nixpkgs-xwayland-satellite {
+    # 	  system = prev.stdenv.hostPlatform.system;
+    # 	}).xwayland-satellite;
+    #   })
+    # ];
   };
 
   perSystem = {
