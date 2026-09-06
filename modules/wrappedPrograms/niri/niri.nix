@@ -154,6 +154,11 @@
           "Mod+V".switch-focus-between-floating-and-tiling = _: {};
           "Mod+Shift+V".toggle-window-floating = _: {};
 
+	  "XF86AudioRaiseVolume".spawn-sh = "${pkgs.wireplumber}/bin/wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+";
+	  "XF86AudioLowerVolume".spawn-sh = "${pkgs.wireplumber}/bin/wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-";
+
+	  "XF86AudioMute".spawn-sh = "${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
+
           "Mod+F".spawn-sh = "${lib.getExe self'.packages.myLibrewolf}";
           "Mod+Shift+F".spawn-sh = "${lib.getExe self'.packages.myLibrewolf} -private-window";
 
