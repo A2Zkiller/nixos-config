@@ -24,6 +24,7 @@
 
       pkgs.mangohud
       pkgs.steamtinkerlaunch
+      pkgs.gale # thunderstore mod manager
 
       pkgs.steam-run
       pkgs.dxvk
