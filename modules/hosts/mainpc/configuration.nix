@@ -47,6 +47,7 @@
 
       pkgs.alsa-scarlett-gui
 
+      pkgs.tailcat
       pkgs.localsend
       pkgs.yubioath-flutter
     ];
