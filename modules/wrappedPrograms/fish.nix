@@ -17,7 +17,7 @@
         pkgs.ripgrep
         pkgs.gnugrep
         pkgs.tldr
-        pkgs.ncdu
+        pkgs.gdu
         pkgs.p7zip-rar
         pkgs.file
         pkgs.fd
