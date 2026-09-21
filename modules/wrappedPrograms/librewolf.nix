@@ -54,6 +54,7 @@
         defaultPref("sidebar.visibility", "expand-on-hover");
         defaultPref("browser.sessionstore.resume_from_crash", true);
         defaultPref("browser.newtabpage.activity-stream.widgets.weather.enabled", false);
+	defaultPref("devtools.selfxss.count", 0);
 
         pref("librewolf.services.settings.allowedCollectionsFromDump", "main/search-config-v2,main/search-config-overrides-v2,main/search-config-icons");
       '';
