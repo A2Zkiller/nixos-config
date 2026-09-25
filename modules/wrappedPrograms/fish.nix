@@ -12,6 +12,7 @@
         pkgs.eza
         pkgs.bat
         pkgs.lazygit
+	pkgs.tig
         pkgs.fzf
         pkgs.btop
         pkgs.ripgrep
