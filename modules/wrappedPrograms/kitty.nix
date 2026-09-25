@@ -19,7 +19,7 @@
 
         window_padding_width = 10;
 
-	text_fg_override_threshold = "12.0 ratio";
+	text_fg_override_threshold = "9.0 ratio";
       };
 
       keybindings = {
