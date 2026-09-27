@@ -5,8 +5,8 @@
     ];
 
     environment.systemPackages = [
-      # pkgs.davinci-resolve-studio
-      (pkgs.callPackage ./_davinci-resolve-package.nix { studioVariant = true; })
+      pkgs.davinci-resolve-studio
+      # (pkgs.callPackage ./_davinci-resolve-package.nix { studioVariant = true; })
     ];
 
     environment.variables = {

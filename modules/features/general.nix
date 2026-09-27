@@ -48,7 +48,6 @@
 
     nixpkgs.config.permittedInsecurePackages = [
       # FIX: Insecure Package
-      "electron-40.10.5"
     ];
 
     documentation.man.cache.enable = true;
