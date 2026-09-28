@@ -15,6 +15,7 @@
     imports = [
       self.nixosModules.nix
       self.nixosModules.base
+      self.nixosModules.gpg
 
       self.nixosModules.hjem
     ];
