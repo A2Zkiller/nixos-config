@@ -1,0 +1,12 @@
+{
+  self,
+  inputs,
+  ...
+}: {
+  flake.nixosModules.mullvad = {
+    services.mullvad-vpn = {
+      enable = true;
+      gui.enable = true;
+    };
+  };
+}

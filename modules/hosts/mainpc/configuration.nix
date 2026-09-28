@@ -13,6 +13,8 @@
       self.nixosModules.desktop
       self.nixosModules.gaming
 
+      self.nixosModules.mullvad
+
       self.nixosModules.emacs
       self.nixosModules.libreoffice
 
@@ -20,7 +22,6 @@
       self.nixosModules.davinci-resolve
 
       self.nixosModules.sober
-      self.nixosModules.surfshark
 
       self.services.wlsunset
 
