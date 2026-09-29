@@ -11,13 +11,18 @@
         pkgs.zoxide
         pkgs.eza
         pkgs.bat
+
         pkgs.lazygit
 	pkgs.tig
+
         pkgs.fzf
         pkgs.btop
+
         pkgs.ripgrep
         pkgs.gnugrep
+
         pkgs.tldr
+
         pkgs.gdu
 	(pkgs._7zip-zstd.override {enableUnfree = true;}) # for rar archives aswell
 	pkgs.ouch
