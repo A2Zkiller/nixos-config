@@ -24,6 +24,7 @@
         pkgs.tldr
 
         pkgs.gdu
+	pkgs.progress
 	(pkgs._7zip-zstd.override {enableUnfree = true;}) # for rar archives aswell
 	pkgs.ouch
         pkgs.file
