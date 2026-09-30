@@ -30,6 +30,7 @@
       pkgs.devenv
 
       tex
+      pkgs.ghostscript
 
       pkgs.rassumfrassum # multiple lsp servers with eglot
       pkgs.emacs-lsp-booster
