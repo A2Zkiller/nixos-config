@@ -34,6 +34,10 @@
 
     time.timeZone = lib.mkDefault "America/New_York";
 
+    environment.systemPackages = [
+      selfpkgs.open-editor-script
+    ];
+
     environment.variables = {
       EDITOR = lib.mkDefault "hx";
     };
