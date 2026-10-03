@@ -2,11 +2,11 @@
   flake.nixosModules.media = {pkgs, ...}: {
     environment.systemPackages = [
       pkgs.mpv
-      pkgs.feh
+      pkgs.qimgv
     ];
 
     xdg.mime.defaultApplications = let
-      images = "feh.desktop";
+      images = "qimgv.desktop";
       videos = "mpv.desktop";
     in {
       "images/*" = images;
