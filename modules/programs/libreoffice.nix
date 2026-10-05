@@ -14,5 +14,7 @@
       hyphenDicts.en_GB # British English
       hyphenDicts.de_DE # German, etc.
     ];
+
+    fonts.enableDefaultPackages = true;
   };
 }
